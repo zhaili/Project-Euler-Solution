@@ -1,0 +1,105 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      2818,         95]
+NotebookOptionsPosition[      2504,         79]
+NotebookOutlinePosition[      2849,         94]
+CellTagsIndexPosition[      2806,         91]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Problem", " ", "119"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"n", "=", 
+     RowBox[{"10", "^", "15"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"r", "=", 
+     RowBox[{
+      RowBox[{"Ceiling", "[", 
+       RowBox[{"Log", "[", 
+        RowBox[{"10", ",", "n"}], "]"}], "]"}], "*", "9"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"a", "=", "2"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Reap", "[", "\[IndentingNewLine]", 
+     RowBox[{"For", "[", 
+      RowBox[{
+       RowBox[{"a", "=", "2"}], ",", 
+       RowBox[{"a", "\[LessEqual]", "r"}], ",", 
+       RowBox[{"a", "++"}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"p", "=", "a"}], ";", "\[IndentingNewLine]", 
+        RowBox[{"While", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"p", "=", 
+             RowBox[{"a", "*", "p"}]}], ")"}], "<", "n"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"Plus", "@@", 
+              RowBox[{"IntegerDigits", "[", "p", "]"}]}], "\[Equal]", "a"}], 
+            ",", 
+            RowBox[{"Sow", "[", "p", "]"}]}], "]"}]}], "\[IndentingNewLine]", 
+         "]"}]}]}], "\[IndentingNewLine]", "]"}], "\[IndentingNewLine]", 
+     "]"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"Part", "[", 
+    RowBox[{
+     RowBox[{"Union", "@", 
+      RowBox[{"Sort", "[", 
+       RowBox[{"%", "[", 
+        RowBox[{"[", 
+         RowBox[{"2", ",", "1"}], "]"}], "]"}], "]"}]}], ",", "30"}], 
+    "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.448334365934887*^9, 3.448334369153637*^9}}],
+
+Cell[BoxData["248155780267521"], "Output",
+ CellChangeTimes->{3.448334369794262*^9}]
+}, Open  ]]
+},
+WindowSize->{715, 559},
+WindowMargins->{{168, Automatic}, {Automatic, 60}},
+FrontEndVersion->"8.0 for Microsoft Windows (32-bit) (November 7, 2010)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 1822, 51, 292, "Input"],
+Cell[2404, 75, 84, 1, 30, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

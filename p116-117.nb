@@ -1,0 +1,231 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[      7452,        222]
+NotebookOptionsPosition[      6906,        198]
+NotebookOutlinePosition[      7247,        213]
+CellTagsIndexPosition[      7204,        210]
+WindowFrame->Normal
+ContainsDynamic->False*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Problem", " ", "116"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Clear", "[", "a", "]"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"a", "[", 
+      RowBox[{"n_", ",", "m_"}], "]"}], "/;", 
+     RowBox[{"n", "\[GreaterEqual]", "m"}]}], ":=", 
+    RowBox[{
+     RowBox[{"a", "[", 
+      RowBox[{"n", ",", "m"}], "]"}], "=", 
+     RowBox[{"Block", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"d", "=", 
+          RowBox[{"n", "-", "m"}]}], ",", "k", ",", "s"}], "}"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"s", "=", "0"}], ";", "\[IndentingNewLine]", 
+        RowBox[{"For", "[", 
+         RowBox[{
+          RowBox[{"k", "=", "d"}], ",", 
+          RowBox[{"k", "\[GreaterEqual]", "0"}], ",", 
+          RowBox[{"--", "k"}], ",", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"s", "+=", 
+            RowBox[{
+             RowBox[{"a", "[", 
+              RowBox[{"k", ",", "m"}], "]"}], "+", "1"}]}], ";"}]}], 
+         "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", "s"}]}], 
+      "\[IndentingNewLine]", "]"}]}]}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"a", "[", 
+      RowBox[{"n_", ",", "m_"}], "]"}], "/;", 
+     RowBox[{"n", "<", "m"}]}], ":=", "0"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"a", "[", 
+       RowBox[{"50", ",", "i"}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"i", ",", "2", ",", "4"}], "}"}]}], "]"}], "//", 
+    "Tr"}]}]}]], "Input",
+ CellChangeTimes->{{3.448670587296875*^9, 3.448670603265625*^9}, {
+  3.448670660640625*^9, 3.448671038921875*^9}, {3.448671088953125*^9, 
+  3.448671123203125*^9}, {3.44867119190625*^9, 3.448671202921875*^9}, {
+  3.448672598109375*^9, 3.448672598546875*^9}, {3.44867274978125*^9, 
+  3.44867275178125*^9}, {3.448672791796875*^9, 3.448672838828125*^9}, {
+  3.44867294159375*^9, 3.448672985515625*^9}, {3.4486739283125*^9, 
+  3.44867393371875*^9}, {3.44867399659375*^9, 3.448674082609375*^9}, {
+  3.4486743954375*^9, 3.4486744416875*^9}, {3.44867870190625*^9, 
+  3.44867870528125*^9}, {3.44867964034375*^9, 3.448679642015625*^9}}],
+
+Cell[BoxData["20492570929"], "Output",
+ CellChangeTimes->{3.448678707859375*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Problem", " ", "117"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Clear", "[", "a", "]"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"a", "[", 
+     RowBox[{"n_", ",", "1"}], "]"}], ":=", "1"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"a", "[", 
+      RowBox[{"n_", ",", "m_"}], "]"}], "/;", 
+     RowBox[{"n", "<", "m"}]}], ":=", "0"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"a", "[", 
+      RowBox[{"n_", ",", "m_"}], "]"}], "/;", 
+     RowBox[{"n", "\[GreaterEqual]", "m"}]}], ":=", 
+    RowBox[{
+     RowBox[{"a", "[", 
+      RowBox[{"n", ",", "m"}], "]"}], "=", 
+     RowBox[{"Block", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"d", "=", 
+          RowBox[{"n", "-", "m"}]}], ",", "k", ",", "s"}], "}"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"s", "=", "0"}], ";", "\[IndentingNewLine]", 
+        RowBox[{"For", "[", 
+         RowBox[{
+          RowBox[{"k", "=", "d"}], ",", 
+          RowBox[{"k", "\[GreaterEqual]", "0"}], ",", 
+          RowBox[{"--", "k"}], ",", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"s", "+=", 
+            RowBox[{
+             RowBox[{"Sum", "[", 
+              RowBox[{
+               RowBox[{"a", "[", 
+                RowBox[{
+                 RowBox[{"d", "-", "k"}], ",", "i"}], "]"}], ",", 
+               RowBox[{"{", 
+                RowBox[{"i", ",", "1", ",", 
+                 RowBox[{"m", "-", "1"}]}], "}"}]}], "]"}], "*", 
+             RowBox[{"Sum", "[", 
+              RowBox[{
+               RowBox[{"a", "[", 
+                RowBox[{"k", ",", "i"}], "]"}], ",", 
+               RowBox[{"{", 
+                RowBox[{"i", ",", "1", ",", "m"}], "}"}]}], "]"}]}]}], 
+           ";"}]}], "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+        "s"}]}], "\[IndentingNewLine]", "]"}]}]}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"a", "[", 
+       RowBox[{"50", ",", "i"}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"i", ",", "1", ",", "4"}], "}"}]}], "]"}], "//", 
+    "Tr"}]}]}]], "Input",
+ CellChangeTimes->{{3.448676302859375*^9, 3.44867632078125*^9}, {
+  3.44867636065625*^9, 3.448676428140625*^9}, {3.448676459859375*^9, 
+  3.448676483484375*^9}, {3.4486765523125*^9, 3.448676673296875*^9}, {
+  3.448676705546875*^9, 3.448676722140625*^9}, {3.44867682321875*^9, 
+  3.4486768490625*^9}, {3.448678304625*^9, 3.448678311359375*^9}, {
+  3.448678511640625*^9, 3.448678522484375*^9}, {3.4486785629375*^9, 
+  3.448678604203125*^9}, {3.448679616390625*^9, 3.448679622359375*^9}}],
+
+Cell[BoxData["100808458960497"], "Output",
+ CellChangeTimes->{{3.448678553640625*^9, 3.448678605921875*^9}, 
+   3.448678710890625*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Problem", " ", "117"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"p", "[", "0", "]"}], ":=", "1"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"p", "[", "1", "]"}], ":=", "1"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"p", "[", "n_", "]"}], "/;", 
+     RowBox[{"n", "<", "0"}]}], ":=", "0"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"p", "[", "n_", "]"}], ":=", 
+    RowBox[{
+     RowBox[{"p", "[", "n", "]"}], "=", 
+     RowBox[{
+      RowBox[{"p", "[", 
+       RowBox[{"n", "-", "1"}], "]"}], "+", 
+      RowBox[{"p", "[", 
+       RowBox[{"n", "-", "2"}], "]"}], "+", 
+      RowBox[{"p", "[", 
+       RowBox[{"n", "-", "3"}], "]"}], "+", 
+      RowBox[{"p", "[", 
+       RowBox[{"n", "-", "4"}], "]"}]}]}]}], "\[IndentingNewLine]", 
+   RowBox[{"p", "[", "50", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.4486796253125*^9, 3.4486796586875*^9}}],
+
+Cell[BoxData["100808458960497"], "Output",
+ CellChangeTimes->{{3.448679635984375*^9, 3.448679659421875*^9}}]
+}, Open  ]]
+},
+WindowSize->{615, 527},
+WindowMargins->{{123, Automatic}, {Automatic, 49}},
+FrontEndVersion->"6.0 for Microsoft Windows (32-bit) (May 21, 2008)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[590, 23, 2244, 56, 232, "Input"],
+Cell[2837, 81, 80, 1, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2954, 87, 2693, 69, 252, "Input"],
+Cell[5650, 158, 134, 2, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5821, 165, 958, 27, 132, "Input"],
+Cell[6782, 194, 108, 1, 30, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

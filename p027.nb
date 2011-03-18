@@ -1,0 +1,95 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      2566,         85]
+NotebookOptionsPosition[      2322,         72]
+NotebookOutlinePosition[      2667,         87]
+CellTagsIndexPosition[      2624,         84]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Problem", " ", "27"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"f", "[", 
+      RowBox[{"a_", ",", "b_"}], "]"}], ":=", 
+     RowBox[{"NestWhile", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"#", "+", "1"}], "&"}], ",", "0", ",", 
+       RowBox[{
+        RowBox[{"PrimeQ", "[", 
+         RowBox[{
+          RowBox[{"#", "^", "2"}], "+", 
+          RowBox[{"a", " ", "#"}], "+", "b"}], "]"}], "&"}]}], "]"}]}], ";"}],
+    "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"maxa", "=", "0"}], ";", 
+    RowBox[{"max", "=", "0"}], ";", 
+    RowBox[{"maxb", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"For", "[", 
+    RowBox[{
+     RowBox[{"a", "=", 
+      RowBox[{"-", "999"}]}], ",", 
+     RowBox[{"a", "<", "999"}], ",", 
+     RowBox[{"a", "++"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"For", "[", 
+      RowBox[{
+       RowBox[{"b", "=", 
+        RowBox[{"-", "999"}]}], ",", 
+       RowBox[{"b", "<", "999"}], ",", 
+       RowBox[{"b", "++"}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"tmp", "=", 
+         RowBox[{"f", "[", 
+          RowBox[{"a", ",", "b"}], "]"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"tmp", ">", "max"}], ",", 
+          RowBox[{
+           RowBox[{"max", "=", "tmp"}], ";", 
+           RowBox[{"maxa", "=", "a"}], ";", 
+           RowBox[{"maxb", "=", "b"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+        RowBox[{"b", "++"}]}]}], "]"}]}], "\[IndentingNewLine]", "]"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"maxa", ",", "maxb", ",", "max"}], "}"}]}]}]], "Input",
+ CellChangeTimes->{{3.444627506875*^9, 3.4446275221875*^9}}]
+},
+WindowSize->{715, 559},
+WindowMargins->{{Automatic, 245}, {Automatic, 30}},
+FrontEndVersion->"8.0 for Microsoft Windows (32-bit) (November 7, 2010)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 1761, 50, 212, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

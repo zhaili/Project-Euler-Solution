@@ -1,0 +1,140 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      3642,        130]
+NotebookOptionsPosition[      3327,        114]
+NotebookOutlinePosition[      3671,        129]
+CellTagsIndexPosition[      3628,        126]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"Problem", " ", "92", " ", 
+     RowBox[{"DP", ":"}]}], ")"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"f", "[", "89", "]"}], "=", "89"}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"f", "[", "1", "]"}], "=", "1"}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"f", "[", "0", "]"}], "=", "0"}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"f", "[", "n_", "]"}], ":=", 
+     RowBox[{
+      RowBox[{"f", "[", "n", "]"}], "=", 
+      RowBox[{"f", "[", 
+       RowBox[{"Total", "[", 
+        RowBox[{
+         RowBox[{"IntegerDigits", "[", "n", "]"}], "^", "2"}], "]"}], 
+       "]"}]}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"Map", "[", 
+     RowBox[{"f", ",", 
+      RowBox[{"Range", "[", 
+       RowBox[{"0", ",", 
+        RowBox[{"7", "*", 
+         RowBox[{"9", "^", "2"}]}]}], "]"}]}], "]"}], ";"}], "\n", 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Map", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"s", "[", 
+          RowBox[{"1", ",", 
+           RowBox[{"#", "^", "2"}]}], "]"}], "=", "1"}], ")"}], "&"}], ",", 
+      RowBox[{"Range", "[", 
+       RowBox[{"0", ",", "9"}], "]"}]}], "]"}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"s", "[", 
+       RowBox[{"i_", ",", "j_"}], "]"}], "/;", 
+      RowBox[{
+       RowBox[{"i", ">", "0"}], "&&", 
+       RowBox[{"j", "\[GreaterEqual]", "0"}]}]}], ":=", 
+     RowBox[{
+      RowBox[{"s", "[", 
+       RowBox[{"i", ",", "j"}], "]"}], "=", 
+      RowBox[{"Sum", "[", 
+       RowBox[{
+        RowBox[{"s", "[", 
+         RowBox[{
+          RowBox[{"i", "-", "1"}], ",", 
+          RowBox[{"j", "-", 
+           RowBox[{"k", "^", "2"}]}]}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"k", ",", "0", ",", "9"}], "}"}]}], "]"}]}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"s", "[", "__", "]"}], "=", "0"}], ";"}], "\n", 
+   "\[IndentingNewLine]", 
+   RowBox[{"Total", "@", 
+    RowBox[{"Map", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"s", "[", 
+         RowBox[{"7", ",", "#"}], "]"}], "*", 
+        RowBox[{"Boole", "[", 
+         RowBox[{
+          RowBox[{"f", "[", "#", "]"}], "\[Equal]", "89"}], "]"}]}], "&"}], 
+      ",", 
+      RowBox[{"Range", "[", 
+       RowBox[{"0", ",", 
+        RowBox[{"7", "*", 
+         RowBox[{"9", "^", "2"}]}]}], "]"}]}], "]"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.445920038546875*^9, 3.445920041765625*^9}, {
+  3.445920673484375*^9, 3.445920680265625*^9}}],
+
+Cell[BoxData["8581146"], "Output",
+ CellChangeTimes->{3.44592010459375*^9, 3.445920604390625*^9, 
+  3.44592069171875*^9}]
+}, Open  ]]
+},
+WindowSize->{715, 559},
+WindowMargins->{{Automatic, 221}, {4, Automatic}},
+FrontEndVersion->"8.0 for Microsoft Windows (32-bit) (November 7, 2010)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 2608, 85, 252, "Input"],
+Cell[3190, 109, 121, 2, 30, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

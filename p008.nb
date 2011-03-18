@@ -1,0 +1,81 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      2530,         72]
+NotebookOptionsPosition[      2218,         56]
+NotebookOutlinePosition[      2561,         71]
+CellTagsIndexPosition[      2518,         68]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"dl", "=", 
+   RowBox[{
+   "IntegerDigits", "[", 
+    "7316717653133062491922511967442657474235534919493496983520312774506326239\
+578318016984801869478851843858615607891129494954595017379583319528532088055111\
+254069874715852386305071569329096329522744304355766896648950445244523161731856\
+403098711121722383113622298934233803081353362766142828064444866452387493035890\
+729629049156044077239071381051585930796086670172427121883998797908792274921901\
+699720888093776657273330010533678812202354218097512545405947522435258490771167\
+055601360483958644670632441572215539753697817977846174064955149290862569321978\
+468622482839722413756570560574902614079729686524145351004748216637048440319989\
+000889524345065854122758866688116427171479924442928230863465674813919123162824\
+586178664583591245665294765456828489128831426076900422421902267105562632111110\
+937054421750694165896040807198403850962455444362981230987879927244284909188845\
+801561660979191338754992005240636899125607176060588611646710940507754100225698\
+315520005593572972571636269561882670428252483600823257530420752963450", 
+    "]"}]}], ";"}], "\n", 
+ RowBox[{"Max", "[", 
+  RowBox[{"Map", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Times", "@@", "#"}], "&"}], ",", 
+    RowBox[{"Partition", "[", 
+     RowBox[{"dl", ",", "5", ",", "1"}], "]"}]}], "]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.444467462233757*^9, 3.444467468624382*^9}, {
+  3.444467648827507*^9, 3.444467666811882*^9}, {3.509417761734375*^9, 
+  3.509417778890625*^9}}],
+
+Cell[BoxData["40824"], "Output",
+ CellChangeTimes->{{3.5094177755*^9, 3.5094177795*^9}}]
+}, Open  ]]
+},
+WindowSize->{715, 559},
+WindowMargins->{{0, Automatic}, {Automatic, 60}},
+FrontEndVersion->"8.0 for Microsoft Windows (32-bit) (November 7, 2010)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 1532, 28, 352, "Input"],
+Cell[2114, 52, 88, 1, 30, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

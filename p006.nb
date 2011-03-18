@@ -1,0 +1,75 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      1704,         65]
+NotebookOptionsPosition[      1391,         49]
+NotebookOutlinePosition[      1736,         64]
+CellTagsIndexPosition[      1693,         61]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Problem", " ", "6"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"Plus", "@@", 
+        RowBox[{"Range", "[", "#", "]"}]}], ")"}], "^", "2"}], "-", 
+     RowBox[{"Plus", "@@", 
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{"i", "^", "2"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"i", ",", "#"}], "}"}]}], "]"}]}]}], "&"}], "@", "100", 
+   "  "}]}]], "Input",
+ CellChangeTimes->{{3.444466778593132*^9, 3.444466892890007*^9}, {
+  3.444466960468132*^9, 3.444466977311882*^9}, {3.4445502356875*^9, 
+  3.4445502534375*^9}}],
+
+Cell[BoxData["25164150"], "Output",
+ CellChangeTimes->{{3.444466813155632*^9, 3.444466893186882*^9}, 
+   3.444466968952507*^9}]
+}, Closed]]
+},
+WindowSize->{715, 559},
+WindowMargins->{{216, Automatic}, {Automatic, 60}},
+FrontEndVersion->"8.0 for Microsoft Windows (32-bit) (November 7, 2010)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 666, 20, 52, "Input"],
+Cell[1248, 44, 127, 2, 30, "Output"]
+}, Closed]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

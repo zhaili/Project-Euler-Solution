@@ -1,0 +1,81 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      1881,         71]
+NotebookOptionsPosition[      1602,         57]
+NotebookOutlinePosition[      1946,         72]
+CellTagsIndexPosition[      1903,         69]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Problem", " ", "34"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Plus", "@@", 
+    RowBox[{"Select", "[", 
+     RowBox[{
+      RowBox[{"Range", "[", 
+       RowBox[{"3", ",", 
+        RowBox[{"10", "^", "6"}]}], "]"}], ",", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Plus", "@@", 
+         RowBox[{"Factorial", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"IntegerDigits", "[", "#", "]"}], "&"}], "@", "#"}], 
+          "]"}]}], "\[Equal]", "#"}], "&"}]}], "]"}]}], "//", 
+   "Timing"}]}]], "Input",
+ CellChangeTimes->{{3.444638870546875*^9, 3.444638885828125*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Sum", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Boole", "[", 
+      RowBox[{"n", "\[Equal]", 
+       RowBox[{"Tr", "[", 
+        RowBox[{
+         RowBox[{"IntegerDigits", "[", "n", "]"}], "!"}], "]"}]}], "]"}], " ",
+      "n"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "3", ",", "1*^6"}], "}"}]}], "]"}], "//", 
+  "Timing"}]], "Input"]
+},
+WindowSize->{715, 559},
+WindowMargins->{{264, Automatic}, {Automatic, 0}},
+FrontEndVersion->"8.0 for Microsoft Windows (32-bit) (November 7, 2010)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 657, 20, 72, "Input"],
+Cell[1217, 42, 381, 13, 31, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

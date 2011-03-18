@@ -1,0 +1,75 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      1647,         65]
+NotebookOptionsPosition[      1337,         49]
+NotebookOutlinePosition[      1680,         64]
+CellTagsIndexPosition[      1637,         61]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Problem", " ", "53"}], "*)"}], 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"f", "[", "r_", "]"}], ":=", 
+     RowBox[{"Length", "@", 
+      RowBox[{"Select", "[", 
+       RowBox[{
+        RowBox[{"Range", "@", "100"}], ",", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"Binomial", "[", 
+           RowBox[{"#", ",", "r"}], "]"}], ">", 
+          RowBox[{"10", "^", "6"}]}], "&"}]}], "]"}]}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"Total", "[", 
+    RowBox[{"f", "/@", 
+     RowBox[{"Range", "@", "100"}]}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.4451338615625*^9, 3.4451338646875*^9}}],
+
+Cell[BoxData["4075"], "Output",
+ CellChangeTimes->{3.44513386521875*^9}]
+}, Open  ]]
+},
+WindowSize->{715, 559},
+WindowMargins->{{48, Automatic}, {Automatic, 0}},
+FrontEndVersion->"8.0 for Microsoft Windows (32-bit) (November 7, 2010)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 667, 21, 52, "Input"],
+Cell[1249, 45, 72, 1, 30, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

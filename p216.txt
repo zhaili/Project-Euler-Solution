@@ -1,0 +1,14 @@
+PARI/gp
+
+{ n=0;
+for (m=2, 50*10^6,
+if (isprime(2*m^2 - 1), n++)
+);
+print(n) 
+}
+
+n=0;
+for(m=2,5*10^7,
+if(ispseudoprime(2*m^2-1),n++);
+if(m%100000==0,print(m);));
+print(n)

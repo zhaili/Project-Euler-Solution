@@ -1,0 +1,66 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      1513,         56]
+NotebookOptionsPosition[      1271,         43]
+NotebookOutlinePosition[      1616,         58]
+CellTagsIndexPosition[      1573,         55]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Problem", " ", "56"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"f", "[", 
+      RowBox[{"a_", ",", "b_"}], "]"}], ":=", 
+     RowBox[{"Total", "[", 
+      RowBox[{"IntegerDigits", "[", 
+       RowBox[{"a", "^", "b"}], "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"Max", "@", 
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"f", "[", 
+       RowBox[{"a", ",", "b"}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"a", ",", "99"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"b", ",", "99"}], "}"}]}], "]"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.445142103265625*^9, 3.445142107453125*^9}}]
+},
+WindowSize->{715, 559},
+WindowMargins->{{120, Automatic}, {34, Automatic}},
+FrontEndVersion->"8.0 for Microsoft Windows (32-bit) (November 7, 2010)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 710, 21, 72, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

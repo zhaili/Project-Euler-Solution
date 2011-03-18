@@ -1,0 +1,60 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      1267,         50]
+NotebookOptionsPosition[       959,         34]
+NotebookOutlinePosition[      1302,         49]
+CellTagsIndexPosition[      1259,         46]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Problem", " ", "7"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"Prime", "[", "10001", "]"}]}]], "Input",
+ CellChangeTimes->{{3.444467046249382*^9, 3.444467057358757*^9}, {
+  3.444550247984375*^9, 3.44455025175*^9}}],
+
+Cell[BoxData["104743"], "Output",
+ CellChangeTimes->{3.444467057936882*^9, 3.5094177295*^9}]
+}, Open  ]]
+},
+WindowSize->{715, 559},
+WindowMargins->{{Automatic, 5}, {Automatic, 30}},
+FrontEndVersion->"8.0 for Microsoft Windows (32-bit) (November 7, 2010)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 269, 6, 52, "Input"],
+Cell[851, 30, 92, 1, 30, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

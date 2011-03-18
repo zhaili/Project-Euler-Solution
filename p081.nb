@@ -1,0 +1,121 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      3071,        111]
+NotebookOptionsPosition[      2828,         98]
+NotebookOutlinePosition[      3172,        113]
+CellTagsIndexPosition[      3129,        110]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Problem", " ", "81"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"A", "=", 
+     RowBox[{"Import", "[", 
+      RowBox[{"\"\<matrix.txt\>\"", ",", "\"\<CSV\>\""}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"m", "[", 
+      RowBox[{"1", ",", "1"}], "]"}], "=", 
+     RowBox[{"A", "[", 
+      RowBox[{"[", 
+       RowBox[{"1", ",", "1"}], "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"m", "[", 
+       RowBox[{"i_", ",", "j_"}], "]"}], "/;", 
+      RowBox[{
+       RowBox[{"i", ">", "1"}], "&&", 
+       RowBox[{"j", ">", "1"}]}]}], ":=", 
+     RowBox[{
+      RowBox[{"m", "[", 
+       RowBox[{"i", ",", "j"}], "]"}], "=", 
+      RowBox[{
+       RowBox[{"Min", "[", 
+        RowBox[{
+         RowBox[{"m", "[", 
+          RowBox[{
+           RowBox[{"i", "-", "1"}], ",", "j"}], "]"}], ",", 
+         RowBox[{"m", "[", 
+          RowBox[{"i", ",", 
+           RowBox[{"j", "-", "1"}]}], "]"}]}], "]"}], "+", 
+       RowBox[{"A", "[", 
+        RowBox[{"[", 
+         RowBox[{"i", ",", "j"}], "]"}], "]"}]}]}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"m", "[", 
+       RowBox[{"i_", ",", "1"}], "]"}], "/;", 
+      RowBox[{"i", ">", "1"}]}], ":=", 
+     RowBox[{
+      RowBox[{"m", "[", 
+       RowBox[{"i", ",", "1"}], "]"}], "=", 
+      RowBox[{
+       RowBox[{"m", "[", 
+        RowBox[{
+         RowBox[{"i", "-", "1"}], ",", "1"}], "]"}], "+", 
+       RowBox[{"A", "[", 
+        RowBox[{"[", 
+         RowBox[{"i", ",", "1"}], "]"}], "]"}]}]}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"m", "[", 
+       RowBox[{"1", ",", "j_"}], "]"}], "/;", 
+      RowBox[{"j", ">", "1"}]}], ":=", 
+     RowBox[{
+      RowBox[{"m", "[", 
+       RowBox[{"1", ",", "j"}], "]"}], "=", 
+      RowBox[{
+       RowBox[{"m", "[", 
+        RowBox[{"1", ",", 
+         RowBox[{"j", "-", "1"}]}], "]"}], "+", 
+       RowBox[{"A", "[", 
+        RowBox[{"[", 
+         RowBox[{"1", ",", "j"}], "]"}], "]"}]}]}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"m", "[", 
+    RowBox[{"80", ",", "80"}], "]"}]}]}]], "Input"]
+},
+WindowSize->{715, 559},
+WindowMargins->{{144, Automatic}, {Automatic, 0}},
+FrontEndVersion->"8.0 for Microsoft Windows (32-bit) (November 7, 2010)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 2267, 76, 152, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

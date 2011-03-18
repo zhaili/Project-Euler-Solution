@@ -1,0 +1,131 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      3527,        121]
+NotebookOptionsPosition[      3174,        104]
+NotebookOutlinePosition[      3519,        119]
+CellTagsIndexPosition[      3476,        116]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Problem", " ", "110"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"g", "[", 
+      RowBox[{"{", 
+       RowBox[{"a_", ",", "b_", ",", "c_", ",", "d_"}], "}"}], "]"}], ":=", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"3", "^", "a"}], " ", 
+       RowBox[{"5", "^", "b"}], " ", 
+       RowBox[{"7", "^", "c"}], " ", 
+       RowBox[{"9", "^", "d"}]}], ">=", 
+      RowBox[{"8", " ", 
+       RowBox[{"10", "^", "6"}]}]}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"candi", "=", 
+     RowBox[{"Select", "[", 
+      RowBox[{
+       RowBox[{"Tuples", "[", 
+        RowBox[{
+         RowBox[{"Range", "[", 
+          RowBox[{"0", ",", "15"}], "]"}], ",", "4"}], "]"}], ",", 
+       RowBox[{
+        RowBox[{"g", "[", "#", "]"}], "&"}]}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"r", "[", "l_", "]"}], ":=", 
+    RowBox[{"Rest", "@", 
+     RowBox[{"FoldList", "[", 
+      RowBox[{"Plus", ",", "0", ",", 
+       RowBox[{"Reverse", "@", "l"}]}], "]"}]}]}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"eval", "[", "l_List", "]"}], ":=", 
+     RowBox[{"Times", "@@", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Times", "@@", 
+          RowBox[{"(", 
+           RowBox[{"Prime", "@", 
+            RowBox[{"Range", "@", "#"}]}], ")"}]}], "&"}], "/@", 
+        RowBox[{"r", "[", "l", "]"}]}], ")"}]}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"evalN", "[", "l_List", "]"}], ":=", 
+     RowBox[{"N", "[", 
+      RowBox[{"Times", "@@", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"Times", "@@", 
+           RowBox[{"(", 
+            RowBox[{"Prime", "@", 
+             RowBox[{"Range", "@", "#"}]}], ")"}]}], "&"}], "/@", 
+         RowBox[{"r", "[", "l", "]"}]}], ")"}]}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"First", "@", 
+    RowBox[{"candi", "[", 
+     RowBox[{"[", 
+      RowBox[{"Ordering", "[", 
+       RowBox[{
+        RowBox[{"evalN", "/@", "candi"}], ",", "1"}], "]"}], "]"}], "]"}]}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"eval", "@", "%"}]}]}]], "Input",
+ CellChangeTimes->{{3.447374353625*^9, 3.447374356328125*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"8", ",", "2", ",", "2", ",", "0"}], "}"}]], "Output",
+ CellChangeTimes->{3.447374375125*^9}],
+
+Cell[BoxData["9350130049860600"], "Output",
+ CellChangeTimes->{3.447374375140625*^9}]
+}, Open  ]]
+},
+WindowSize->{715, 559},
+WindowMargins->{{192, Automatic}, {34, Automatic}},
+FrontEndVersion->"8.0 for Microsoft Windows (32-bit) (November 7, 2010)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 2356, 71, 192, "Input"],
+Cell[2938, 95, 132, 3, 30, "Output"],
+Cell[3073, 100, 85, 1, 30, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

@@ -1,0 +1,81 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      1958,         71]
+NotebookOptionsPosition[      1645,         55]
+NotebookOutlinePosition[      1990,         70]
+CellTagsIndexPosition[      1947,         67]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Problem", " ", "26"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"f", "[", "x_", "]"}], ":=", 
+    RowBox[{"Length", "[", 
+     RowBox[{"Level", "[", 
+      RowBox[{
+       RowBox[{"RealDigits", "[", 
+        RowBox[{"x", "^", 
+         RowBox[{"-", "1"}]}], "]"}], ",", 
+       RowBox[{"{", "3", "}"}]}], "]"}], "]"}]}], "\n", 
+   RowBox[{
+    RowBox[{"f", "/@", 
+     RowBox[{"Range", "[", 
+      RowBox[{"1", ",", "999"}], "]"}]}], ";"}], "\n", 
+   RowBox[{"Ordering", "[", 
+    RowBox[{"%", ",", 
+     RowBox[{"-", "1"}]}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.444606280046875*^9, 3.444606283109375*^9}, {
+   3.444606982078125*^9, 3.444606989578125*^9}, {3.444607078015625*^9, 
+   3.444607078171875*^9}, {3.4446342388125*^9, 3.444634297421875*^9}, 
+   3.4446343358125*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", "983", "}"}]], "Output",
+ CellChangeTimes->{
+  3.444606986375*^9, 3.444607081578125*^9, {3.444634239765625*^9, 
+   3.444634297921875*^9}, 3.44463433621875*^9}]
+}, Open  ]]
+},
+WindowSize->{715, 559},
+WindowMargins->{{Automatic, 221}, {Automatic, 60}},
+FrontEndVersion->"8.0 for Microsoft Windows (32-bit) (November 7, 2010)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 860, 24, 92, "Input"],
+Cell[1442, 48, 187, 4, 30, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

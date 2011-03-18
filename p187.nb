@@ -1,0 +1,78 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      1813,         68]
+NotebookOptionsPosition[      1502,         52]
+NotebookOutlinePosition[      1846,         67]
+CellTagsIndexPosition[      1803,         64]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Problem", " ", "187"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"n", "=", 
+     RowBox[{"10", "^", "8"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"len", "=", 
+     RowBox[{"PrimePi", "[", 
+      RowBox[{"Sqrt", "[", "n", "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Total", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"PrimePi", "[", 
+        RowBox[{"n", "/", "#"}], "]"}], "&"}], "/@", 
+      RowBox[{"Prime", "[", 
+       RowBox[{"Range", "@", "len"}], "]"}]}], "]"}], "-", " ", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"len", "-", "1"}], ")"}], " ", 
+     RowBox[{"len", "/", "2"}]}]}]}]}]], "Input",
+ CellChangeTimes->{{3.44833017184375*^9, 3.448330174953125*^9}}],
+
+Cell[BoxData["17427258"], "Output",
+ CellChangeTimes->{3.448330175421875*^9, 3.509416439640625*^9}]
+}, Open  ]]
+},
+WindowSize->{715, 559},
+WindowMargins->{{48, Automatic}, {Automatic, 60}},
+FrontEndVersion->"8.0 for Microsoft Windows (32-bit) (November 7, 2010)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 805, 24, 92, "Input"],
+Cell[1387, 48, 99, 1, 30, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

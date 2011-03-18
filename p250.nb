@@ -1,0 +1,116 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[      3239,        107]
+NotebookOptionsPosition[      2911,         91]
+NotebookOutlinePosition[      3257,        106]
+CellTagsIndexPosition[      3214,        103]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"l", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"PowerMod", "[", 
+      RowBox[{"i", ",", "i", ",", "250"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", "250250"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"c", "=", 
+   RowBox[{"List", "@@", 
+    RowBox[{"Product", "[", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"1", "+", 
+        RowBox[{"x", "^", "i"}]}], ")"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"i", ",", "l"}], "}"}]}], "]"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"m", "=", 
+   RowBox[{"10", "^", "16"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "e_", "]"}], ":=", 
+   RowBox[{"Collect", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Expand", "[", 
+       RowBox[{"e", ",", "x", ",", 
+        RowBox[{"Modulus", "\[Rule]", "m"}]}], "]"}], "/.", 
+      RowBox[{
+       RowBox[{"x", "^", "n_"}], "\[Rule]", 
+       RowBox[{"x", "^", 
+        RowBox[{"Mod", "[", 
+         RowBox[{"n", ",", "250"}], "]"}]}]}]}], ",", "x", ",", 
+     RowBox[{"Modulus", "\[Rule]", "m"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"p", "=", 
+    RowBox[{"Fold", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"f", "[", 
+        RowBox[{
+         RowBox[{"f", "[", "#1", "]"}], "*", 
+         RowBox[{"f", "[", "#2", "]"}]}], "]"}], "&"}], ",", "1", ",", "c"}], 
+     "]"}]}], ";"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+   "Because", " ", "is", " ", "a", " ", "non", " ", "empty", " ", "set"}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Coefficient", "[", 
+   RowBox[{"p", ",", "x", ",", "0"}], "]"}], "-", "1"}]}], "Input",
+ CellChangeTimes->{{3.482803057484375*^9, 3.482803075453125*^9}, {
+  3.48280365571875*^9, 3.48280365684375*^9}, {3.482803844953125*^9, 
+  3.4828038528125*^9}, {3.482803912390625*^9, 3.48280391625*^9}, {
+  3.482804254765625*^9, 3.482804260546875*^9}, {3.482804455734375*^9, 
+  3.48280445659375*^9}, {3.4828045968125*^9, 3.482804604671875*^9}, {
+  3.482806160125*^9, 3.482806174640625*^9}, {3.482808942421875*^9, 
+  3.482808942703125*^9}, {3.48280936559375*^9, 3.482809381515625*^9}}],
+
+Cell[BoxData["1425480602091519"], "Output",
+ CellChangeTimes->{3.482809389796875*^9, 3.482809422671875*^9}]
+}, Open  ]]
+},
+WindowSize->{615, 559},
+WindowMargins->{{Automatic, 108}, {Automatic, 59}},
+FrontEndVersion->"7.0 for Microsoft Windows (32-bit) (February 18, 2009)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 2218, 63, 172, "Input"],
+Cell[2788, 87, 107, 1, 30, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

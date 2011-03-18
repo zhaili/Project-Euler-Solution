@@ -1,0 +1,84 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      2124,         74]
+NotebookOptionsPosition[      1880,         61]
+NotebookOutlinePosition[      2225,         76]
+CellTagsIndexPosition[      2182,         73]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Problem", " ", "32"}], "*)"}], 
+  RowBox[{
+   RowBox[{
+    RowBox[{"test", "=", 
+     RowBox[{
+      RowBox[{"MemberQ", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{"Table", "[", 
+           RowBox[{
+            RowBox[{"Union", "@@", 
+             RowBox[{"IntegerDigits", "@", 
+              RowBox[{"#", "[", 
+               RowBox[{"[", 
+                RowBox[{"{", 
+                 RowBox[{"i", ",", 
+                  RowBox[{"-", "i"}]}], "}"}], "]"}], "]"}]}]}], ",", 
+            RowBox[{"{", 
+             RowBox[{"i", ",", "2", ",", 
+              RowBox[{
+               RowBox[{"Length", "@", "#"}], "/", "2"}]}], "}"}]}], "]"}], 
+          "&"}], "[", 
+         RowBox[{"Divisors", "@", 
+          RowBox[{"FromDigits", "@", "#"}]}], "]"}], ",", 
+        RowBox[{
+         RowBox[{"Range", "@", "9"}], "~", "Complement", "~", "#"}]}], "]"}], 
+      "&"}]}], ";"}], "\[IndentingNewLine]", "\n", 
+   RowBox[{
+    RowBox[{"FromDigits", "/@", 
+     RowBox[{"Select", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Range", "@", "9"}], "~", "Permutations", "~", 
+        RowBox[{"{", "4", "}"}]}], ",", "test"}], "]"}]}], "//", 
+    "Tr"}]}]}]], "Input",
+ CellChangeTimes->{{3.44463462153125*^9, 3.444634623140625*^9}}]
+},
+WindowSize->{715, 559},
+WindowMargins->{{240, Automatic}, {34, Automatic}},
+FrontEndVersion->"8.0 for Microsoft Windows (32-bit) (November 7, 2010)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 1319, 39, 132, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

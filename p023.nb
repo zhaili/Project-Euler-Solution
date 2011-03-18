@@ -1,0 +1,279 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      8278,        270]
+NotebookOptionsPosition[      7770,        248]
+NotebookOutlinePosition[      8115,        263]
+CellTagsIndexPosition[      8072,        260]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Problem", " ", "23"}], "*)"}], "\n", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"Abundant", "[", "n_", "]"}], ":=", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"Plus", "@@", 
+         RowBox[{"Divisors", "[", "n", "]"}]}], "-", "n"}], ")"}], ">", 
+      "n"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"AbundantQ", "=", 
+     RowBox[{"Array", "[", 
+      RowBox[{"Abundant", ",", "28123"}], "]"}]}], ";"}], "\n", 
+   RowBox[{"Plus", "@@", 
+    RowBox[{"Select", "[", 
+     RowBox[{
+      RowBox[{"Range", "[", "28123", "]"}], ",", 
+      RowBox[{
+       RowBox[{"Not", "[", 
+        RowBox[{"Or", "@@", 
+         RowBox[{"Map", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{
+             RowBox[{"AbundantQ", "[", 
+              RowBox[{"[", 
+               RowBox[{"#", "[", 
+                RowBox[{"[", "1", "]"}], "]"}], "]"}], "]"}], "&&", 
+             RowBox[{"AbundantQ", "[", 
+              RowBox[{"[", 
+               RowBox[{"#", "[", 
+                RowBox[{"[", "2", "]"}], "]"}], "]"}], "]"}]}], "&"}], ",", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"Table", "[", 
+              RowBox[{
+               RowBox[{"{", 
+                RowBox[{"i", ",", 
+                 RowBox[{"#", "-", "i"}]}], "}"}], ",", 
+               RowBox[{"{", 
+                RowBox[{"i", ",", 
+                 RowBox[{"#", "/", "2"}]}], "}"}]}], "]"}], "&"}], "@", 
+            "#"}]}], "]"}]}], "]"}], "&"}]}], "]"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.4445402375*^9, 3.44454024578125*^9}, {
+  3.444540278703125*^9, 3.4445402788125*^9}, {3.509419088921875*^9, 
+  3.509419090671875*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<DiscreteMath`Combinatorica`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"abun", "[", "x_", "]"}], ":=", 
+  RowBox[{
+   RowBox[{"Plus", "@@", 
+    RowBox[{"Drop", "[", 
+     RowBox[{
+      RowBox[{"Divisors", "@", "x"}], ",", 
+      RowBox[{"-", "1"}]}], "]"}]}], ">", "x"}]}], "\n", 
+ RowBox[{
+  RowBox[{"abundant", "=", 
+   RowBox[{"Select", "[", 
+    RowBox[{
+     RowBox[{"Range", "@", "20161"}], ",", "abun"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"hunt", "[", "k_", "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"lo", ",", "hi", ",", "x"}], "}"}], ",", 
+    RowBox[{
+     RowBox[{"lo", "=", "1"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"hi", "=", 
+      RowBox[{"Floor", "@", 
+       RowBox[{"BinarySearch", "[", 
+        RowBox[{"abundant", ",", "k"}], "]"}]}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"While", "[", 
+      RowBox[{
+       RowBox[{"lo", "\[LessEqual]", "hi"}], ",", 
+       RowBox[{
+        RowBox[{"x", "=", 
+         RowBox[{
+          RowBox[{"abundant", "[", 
+           RowBox[{"[", "lo", "]"}], "]"}], "+", 
+          RowBox[{"abundant", "[", 
+           RowBox[{"[", "hi", "]"}], "]"}]}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"Which", "[", 
+         RowBox[{
+          RowBox[{"x", "\[Equal]", "k"}], ",", 
+          RowBox[{"Return", "@", "0"}], ",", 
+          RowBox[{"x", "<", "k"}], ",", 
+          RowBox[{"lo", "++"}], ",", 
+          RowBox[{"x", ">", "k"}], ",", 
+          RowBox[{"hi", "--"}]}], "]"}]}]}], "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Return", "@", "k"}]}]}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"276", "+", 
+  RowBox[{"Plus", "@@", 
+   RowBox[{"(", 
+    RowBox[{"hunt", "/@", 
+     RowBox[{"Range", "[", 
+      RowBox[{"25", ",", "20161"}], "]"}]}], ")"}]}]}]}], "Input",
+ CellChangeTimes->{{3.50941913196875*^9, 3.509419163515625*^9}, {
+  3.50941921071875*^9, 3.509419229515625*^9}, {3.50941928121875*^9, 
+  3.5094192870625*^9}}],
+
+Cell[BoxData["4179871"], "Output",
+ CellChangeTimes->{3.509419329671875*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"n", "=", "28123"}], ";", 
+  RowBox[{"s", "=", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"a", "=", 
+   RowBox[{
+    RowBox[{"Reap", "[", 
+     RowBox[{"Array", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{"DivisorSigma", "[", 
+             RowBox[{"1", ",", "#"}], "]"}], "-", "#"}], ">", "#"}], ",", 
+          RowBox[{"Sow", "@", "#"}]}], "]"}], "&"}], ",", "n"}], "]"}], "]"}],
+     "[", 
+    RowBox[{"[", 
+     RowBox[{"2", ",", "1"}], "]"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"p", "=", 
+   RowBox[{
+    RowBox[{"Position", "[", 
+     RowBox[{"a", ",", 
+      RowBox[{"x_", "/;", 
+       RowBox[{"x", ">", 
+        RowBox[{"n", "/", "2"}]}]}], ",", "1", ",", "1"}], "]"}], "[", 
+    RowBox[{"[", 
+     RowBox[{"1", ",", "1"}], "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Do", "[", 
+  RowBox[{
+   RowBox[{"s", "=", 
+    RowBox[{"Union", "[", 
+     RowBox[{"s", ",", 
+      RowBox[{
+       RowBox[{"a", "[", 
+        RowBox[{"[", "i", "]"}], "]"}], "+", 
+       RowBox[{"Drop", "[", 
+        RowBox[{"a", ",", 
+         RowBox[{"i", "-", "1"}]}], "]"}]}]}], "]"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"i", ",", "p"}], "}"}]}], "]"}], "\n", 
+ RowBox[{"Tr", "@", 
+  RowBox[{"Complement", "[", 
+   RowBox[{
+    RowBox[{"Range", "@", "n"}], ",", "s"}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.509419241953125*^9, 3.509419245921875*^9}}],
+
+Cell[BoxData["4179871"], "Output",
+ CellChangeTimes->{3.444545546765625*^9, 3.509419250609375*^9}]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"AbundantQ", "[", "a0_Integer", "]"}], ":=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"Plus", "@@", 
+       RowBox[{"Divisors", "[", "a0", "]"}]}], "-", "a0"}], ")"}], ">", 
+    "a0"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"abus", "=", 
+   RowBox[{"Select", "[", 
+    RowBox[{
+     RowBox[{"Range", "[", "20161", "]"}], ",", "AbundantQ"}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"s", "=", "0"}], ";"}], "\n", 
+ RowBox[{"For", "[", 
+  RowBox[{
+   RowBox[{"i", "=", "1"}], ",", 
+   RowBox[{"i", "<", "20162"}], ",", 
+   RowBox[{"i", "++"}], ",", 
+   RowBox[{
+    RowBox[{"For", "[", 
+     RowBox[{
+      RowBox[{"j", "=", "1"}], ",", 
+      RowBox[{"j", "<", 
+       RowBox[{"Length", "[", "abus", "]"}]}], ",", 
+      RowBox[{"j", "++"}], ",", 
+      RowBox[{
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"abus", "[", 
+           RowBox[{"[", "j", "]"}], "]"}], "\[GreaterEqual]", "i"}], ",", 
+         RowBox[{
+          RowBox[{"s", "+=", "i"}], ";", 
+          RowBox[{"Break", "[", "]"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"AbundantQ", "[", 
+          RowBox[{"i", "-", 
+           RowBox[{"abus", "[", 
+            RowBox[{"[", "j", "]"}], "]"}]}], "]"}], ",", 
+         RowBox[{"Break", "[", "]"}]}], "]"}]}]}], "]"}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{"j", "\[Equal]", 
+       RowBox[{"Length", "[", "abus", "]"}]}], ",", 
+      RowBox[{"s", "+=", "i"}]}], "]"}]}]}], "]"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", "s", "]"}], ";"}]}], "Input"]
+},
+WindowSize->{715, 559},
+WindowMargins->{{145, Automatic}, {Automatic, 61}},
+FrontEndVersion->"8.0 for Microsoft Windows (32-bit) (November 7, 2010)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 1725, 50, 132, "Input"],
+Cell[CellGroupData[{
+Cell[2307, 74, 2025, 56, 192, "Input"],
+Cell[4335, 132, 76, 1, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4448, 138, 1526, 49, 112, "Input"],
+Cell[5977, 189, 98, 1, 30, "Output"]
+}, Open  ]],
+Cell[6090, 193, 1676, 53, 172, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)

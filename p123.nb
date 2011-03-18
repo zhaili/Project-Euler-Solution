@@ -1,0 +1,80 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      1827,         70]
+NotebookOptionsPosition[      1515,         54]
+NotebookOutlinePosition[      1860,         69]
+CellTagsIndexPosition[      1817,         66]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Problem", " ", "123"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"r", "[", 
+     RowBox[{"n_", "/;", 
+      RowBox[{"OddQ", "[", "n", "]"}]}], "]"}], ":=", 
+    RowBox[{"Mod", "[", 
+     RowBox[{
+      RowBox[{"2", 
+       RowBox[{"Prime", "[", "n", "]"}], "n"}], ",", 
+      RowBox[{
+       RowBox[{"Prime", "[", "n", "]"}], "^", "2"}]}], "]"}]}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"r", "[", "n_", "]"}], ":=", "2"}], "\[IndentingNewLine]", 
+   RowBox[{"NestWhile", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"#", "+", "1"}], "&"}], ",", "2", ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"r", "[", "#", "]"}], "<", 
+       RowBox[{"10", "^", "10"}]}], "&"}]}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.4483286978125*^9, 3.4483287*^9}}],
+
+Cell[BoxData["21035"], "Output",
+ CellChangeTimes->{3.44832870453125*^9}]
+}, Open  ]]
+},
+WindowSize->{715, 559},
+WindowMargins->{{144, Automatic}, {Automatic, 30}},
+FrontEndVersion->"8.0 for Microsoft Windows (32-bit) (November 7, 2010)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 844, 26, 92, "Input"],
+Cell[1426, 50, 73, 1, 30, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

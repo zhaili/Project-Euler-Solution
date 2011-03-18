@@ -1,0 +1,107 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      2559,         97]
+NotebookOptionsPosition[      2172,         79]
+NotebookOutlinePosition[      2514,         94]
+CellTagsIndexPosition[      2471,         91]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"problem", " ", "71"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"r", "=", 
+    RowBox[{"Reduce", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"3", "b"}], "-", 
+        RowBox[{"7", "a"}]}], "\[Equal]", "1"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"a", ",", "b"}], "}"}], ",", "Integers"}], "]"}]}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Solve", "[", 
+     RowBox[{"1000000", "\[Equal]", 
+      RowBox[{
+       RowBox[{"-", "2"}], "+", 
+       RowBox[{"7", "c"}]}]}], "]"}], "//", "N"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"ToRules", "[", 
+     RowBox[{"Rest", "@", "r"}], "]"}], "/.", 
+    RowBox[{
+     RowBox[{"C", "[", "1", "]"}], "\[Rule]", "142857"}]}]}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"C", "[", "1", "]"}], "\[Element]", "Integers"}], "&&", 
+  RowBox[{"a", "\[Equal]", 
+   RowBox[{
+    RowBox[{"-", "1"}], "+", 
+    RowBox[{"3", " ", 
+     RowBox[{"C", "[", "1", "]"}]}]}]}], "&&", 
+  RowBox[{"b", "\[Equal]", 
+   RowBox[{
+    RowBox[{"-", "2"}], "+", 
+    RowBox[{"7", " ", 
+     RowBox[{"C", "[", "1", "]"}]}]}]}]}]], "Output",
+ CellChangeTimes->{3.446097454578125*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{"c", "\[Rule]", "142857.42857142858`"}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{3.446097454609375*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"a", "\[Rule]", "428570"}], ",", 
+   RowBox[{"b", "\[Rule]", "999997"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.446097454625*^9}]
+}, Open  ]]
+},
+WindowSize->{715, 559},
+WindowMargins->{{0, Automatic}, {4, Automatic}},
+FrontEndVersion->"8.0 for Microsoft Windows (32-bit) (November 7, 2010)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 791, 25, 92, "Input"],
+Cell[1373, 49, 432, 14, 30, "Output"],
+Cell[1808, 65, 163, 4, 30, "Output"],
+Cell[1974, 71, 182, 5, 30, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

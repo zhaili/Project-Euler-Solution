@@ -1,0 +1,69 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      1632,         59]
+NotebookOptionsPosition[      1392,         46]
+NotebookOutlinePosition[      1735,         61]
+CellTagsIndexPosition[      1692,         58]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Problem", " ", "18"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"T", "=", 
+     RowBox[{"Import", "[", 
+      RowBox[{"\"\<18.txt\>\"", ",", "\"\<Table\>\""}], "]"}]}], ";", 
+    RowBox[{"f", "=", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"Max", "/@", 
+         RowBox[{"Partition", "[", 
+          RowBox[{"#1", ",", "2", ",", "1", ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", "0"}], "]"}]}], 
+        ")"}], "+", "#2"}], "&"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"Max", "@", 
+    RowBox[{"Fold", "[", 
+     RowBox[{"f", ",", 
+      RowBox[{"{", "}"}], ",", "T"}], "]"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.445156521203125*^9, 3.445156526328125*^9}}]
+},
+WindowSize->{715, 559},
+WindowMargins->{{Automatic, 53}, {4, Automatic}},
+FrontEndVersion->"8.0 for Microsoft Windows (32-bit) (November 7, 2010)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 831, 24, 72, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

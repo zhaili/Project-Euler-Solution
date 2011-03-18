@@ -1,0 +1,274 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[      8859,        265]
+NotebookOptionsPosition[      8124,        235]
+NotebookOutlinePosition[      8465,        250]
+CellTagsIndexPosition[      8422,        247]
+WindowFrame->Normal
+ContainsDynamic->False*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{"Problem", " ", "59"}], "*)"}]], "Input",
+ CellChangeTimes->{{3.445228516078125*^9, 3.445228529421875*^9}, {
+  3.445228657609375*^9, 3.4452286664375*^9}, {3.445230330484375*^9, 
+  3.4452303526875*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"SetDirectory", "[", "\"\<D:\\\\\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"L", "=", 
+   RowBox[{"Import", "[", 
+    RowBox[{"\"\<cipher1.txt\>\"", ",", "\"\<List\>\"", ",", 
+     RowBox[{"\"\<LineSeparators\>\"", "\[Rule]", "\"\<,\>\""}]}], "]"}]}], 
+  ";", 
+  RowBox[{"key", "=", 
+   RowBox[{"Tuples", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"Range", "[", 
+        RowBox[{"#", ",", 
+         RowBox[{"#", "+", "25"}]}], "]"}], "&"}], "@@", 
+      RowBox[{"ToCharacterCode", "[", "\"\<a\>\"", "]"}]}], ",", "3"}], 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"plaintxt", "=", 
+   RowBox[{"Partition", "[", 
+    RowBox[{"L", ",", "3"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"dec", "[", 
+    RowBox[{"key_", ",", "ptxt_"}], "]"}], ":=", 
+   RowBox[{"Flatten", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"BitXor", "[", 
+       RowBox[{"key", ",", "#"}], "]"}], "&"}], "/@", "ptxt"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"iskey", "[", 
+    RowBox[{"key_", ",", "ptxt_"}], "]"}], ":=", 
+   RowBox[{"And", "@@", 
+    RowBox[{"Map", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"#", ">", "9"}], "&&", 
+        RowBox[{"#", "<", "123"}]}], "&"}], ",", 
+      RowBox[{"dec", "[", 
+       RowBox[{"key", ",", "ptxt"}], "]"}]}], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"possiblekey", "=", 
+  RowBox[{"Select", "[", 
+   RowBox[{"key", ",", 
+    RowBox[{
+     RowBox[{"iskey", "[", 
+      RowBox[{"#", ",", "plaintxt"}], "]"}], "&"}]}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.44522892546875*^9, 3.44522925621875*^9}, {
+   3.445229508234375*^9, 3.4452297319375*^9}, {3.445229835234375*^9, 
+   3.445229856046875*^9}, 3.4452303313125*^9, {3.445230473640625*^9, 
+   3.445230478609375*^9}, 3.445230529109375*^9, {3.44523060590625*^9, 
+   3.445230614984375*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"102", ",", "108", ",", "100"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"102", ",", "110", ",", "100"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"102", ",", "111", ",", "100"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"103", ",", "108", ",", "100"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"103", ",", "110", ",", "100"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"103", ",", "111", ",", "100"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.445229806140625*^9, 3.445229990859375*^9, 
+  3.44523054253125*^9, 3.44523074753125*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FromCharacterCode", "/@", "possiblekey"}]], "Input",
+ CellChangeTimes->{{3.44523000125*^9, 3.445230040609375*^9}, 
+   3.445230486515625*^9, 3.445230759125*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"fld\"\>", ",", "\<\"fnd\"\>", ",", "\<\"fod\"\>", 
+   ",", "\<\"gld\"\>", ",", "\<\"gnd\"\>", ",", "\<\"god\"\>"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.44523002165625*^9, 3.445230041046875*^9}, 
+   3.445230542984375*^9, {3.44523075165625*^9, 3.445230760234375*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"decplain", "[", 
+    RowBox[{"key_", ",", "ptxt_"}], "]"}], ":=", 
+   RowBox[{"FromCharacterCode", "[", 
+    RowBox[{"dec", "[", 
+     RowBox[{"key", ",", "ptxt"}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"decplain", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"103", ",", "111", ",", "100"}], "}"}], ",", "plaintxt"}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.44523005684375*^9, 3.445230126171875*^9}, {
+  3.44523024515625*^9, 3.445230260921875*^9}, {3.445230432578125*^9, 
+  3.445230439765625*^9}}],
+
+Cell[BoxData["\<\"(The Gospel of John, chapter 1) 1 In the beginning the Word \
+already existed. He was with God, and he was God. 2 He was in the beginning \
+with God. 3 He created everything there is. Nothing exists that he didn't \
+make. 4 Life itself was in him, and this life gives light to everyone. 5 The \
+light shines through the darkness, and the darkness can never extinguish it. \
+6 God sent John the Baptist 7 to tell everyone about the light so that \
+everyone might believe because of his testimony. 8 John himself was not the \
+light; he was only a witness to the light. 9 The one who is the true light, \
+who gives light to everyone, was going to come into the world. 10 But \
+although the world was made through him, the world didn't recognize him when \
+he came. 11 Even in his own land and among his own people, he was not \
+accepted. 12 But to all who believed him and accepted him, he gave the right \
+to become children of God. 13 They are reborn! This is not a physical birth \
+resulting from human passion or plan, this rebirth comes from God.14 So the \
+Word became human and lived here on earth among us. He was full of unfailing \
+love and faithfulness. And we have seen his glory, the glory of the only Son \
+of the Father\"\>"], "Output",
+ CellChangeTimes->{
+  3.4452301265*^9, {3.445230246171875*^9, 3.445230261234375*^9}, 
+   3.44523044640625*^9, 3.445230543296875*^9, 3.445230763234375*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Total", "@", 
+   RowBox[{"dec", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"103", ",", "111", ",", "100"}], "}"}], ",", "plaintxt"}], 
+    "]"}]}], "+", "46"}]], "Input",
+ CellChangeTimes->{{3.445230374421875*^9, 3.445230437546875*^9}}],
+
+Cell[BoxData["107359"], "Output",
+ CellChangeTimes->{{3.445230378328125*^9, 3.445230445046875*^9}, 
+   3.44523054340625*^9, 3.445230766375*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"From", " ", "Mr", " ", "Wizard"}], "*)"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"dat", "=", 
+     RowBox[{"First", "@", 
+      RowBox[{"Import", "[", 
+       RowBox[{"\"\<cipher1.txt\>\"", ",", "\"\<CSV\>\""}], "]"}]}]}], ";"}], 
+   "\n", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"test", "[", 
+     RowBox[{"s_", ",", "k_"}], "]"}], ":=", 
+    RowBox[{"Count", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"dat", "[", 
+        RowBox[{"[", 
+         RowBox[{"s", ";;", ";;", "3"}], "]"}], "]"}], "~", "BitXor", "~", 
+       "k"}], ",", 
+      RowBox[{"a_", "/;", 
+       RowBox[{"64", "<", "a", "<", "123"}]}]}], "]"}]}], "\n", 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"decode", "[", "k_", "]"}], ":=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"#", "~", "BitXor", "~", "k"}], "&"}], "/@", 
+     RowBox[{"Partition", "[", 
+      RowBox[{"dat", ",", "3", ",", "3", ",", "1", ",", "k"}], "]"}]}]}], 
+   "\n", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"Ordering", "[", 
+        RowBox[{"#", ",", 
+         RowBox[{"-", "1"}]}], "]"}], "[", 
+       RowBox[{"[", "1", "]"}], "]"}], "+", "96"}], "&"}], "/@", 
+    RowBox[{"Outer", "[", 
+     RowBox[{"test", ",", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "2", ",", "3"}], "}"}], ",", 
+      RowBox[{"97", "~", "Range", "~", "122"}]}], "]"}]}], "\n", 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"decode", "[", "%", "]"}], "~", "Total", "~", "2"}]}]}]], "Input",
+ CellChangeTimes->{{3.445232689671875*^9, 3.44523270246875*^9}}]
+},
+WindowSize->{615, 527},
+WindowMargins->{{Automatic, 152}, {Automatic, 32}},
+FrontEndVersion->"6.0 for Microsoft Windows (32-bit) (May 21, 2008)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[568, 21, 241, 5, 31, "Input"],
+Cell[CellGroupData[{
+Cell[834, 30, 1965, 58, 152, "Input"],
+Cell[2802, 90, 612, 16, 50, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3451, 111, 183, 3, 31, "Input"],
+Cell[3637, 116, 316, 6, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3990, 127, 571, 16, 52, "Input"],
+Cell[4564, 145, 1422, 19, 373, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6023, 169, 280, 8, 31, "Input"],
+Cell[6306, 179, 143, 2, 30, "Output"]
+}, Open  ]],
+Cell[6464, 184, 1656, 49, 232, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)

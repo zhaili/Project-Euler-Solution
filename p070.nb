@@ -1,0 +1,187 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[      5914,        178]
+NotebookOptionsPosition[      5401,        156]
+NotebookOutlinePosition[      5745,        171]
+CellTagsIndexPosition[      5702,        168]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "n_", "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Sort", "@", 
+     RowBox[{"IntegerDigits", "[", 
+      RowBox[{"EulerPhi", "[", "n", "]"}], "]"}]}], "==", 
+    RowBox[{"Sort", "@", 
+     RowBox[{"IntegerDigits", "[", "n", "]"}]}]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.445937028609375*^9, 3.445937145875*^9}, {
+  3.4459376698125*^9, 3.445937670234375*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"L", "=", 
+  RowBox[{"Map", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Select", "[", 
+      RowBox[{
+       RowBox[{"Range", "[", 
+        RowBox[{
+         RowBox[{"#", " ", 
+          RowBox[{"10", "^", "6"}]}], ",", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"#", "+", "1"}], ")"}], 
+          RowBox[{"10", "^", "6"}]}]}], "]"}], ",", 
+       RowBox[{
+        RowBox[{"f", "[", "#", "]"}], "&"}]}], "]"}], "&"}], ",", 
+    RowBox[{"Range", "[", 
+     RowBox[{"0", ",", "9"}], "]"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.445937393171875*^9, 3.44593741709375*^9}, 
+   3.44593764140625*^9, {3.44593768209375*^9, 3.44593768253125*^9}, {
+   3.44593820140625*^9, 3.44593824134375*^9}, {3.445938304546875*^9, 
+   3.44593833946875*^9}, {3.445938395359375*^9, 3.445938400296875*^9}, {
+   3.445938444734375*^9, 3.445938513203125*^9}, {3.4459385698125*^9, 
+   3.445938660609375*^9}, {3.445938715625*^9, 3.445938716171875*^9}, {
+   3.445938764171875*^9, 3.44593876503125*^9}, 3.445938830953125*^9, {
+   3.44593889378125*^9, 3.445938894453125*^9}, {3.445938953546875*^9, 
+   3.445938954078125*^9}, 3.445939008859375*^9, 3.445939062046875*^9, {
+   3.445940312953125*^9, 3.445940363859375*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", "8121960", "}"}]], "Output",
+ CellChangeTimes->{{3.4459373960625*^9, 3.445937413921875*^9}, 
+   3.445937463*^9, {3.44593819640625*^9, 3.44593820240625*^9}, {
+   3.445938233859375*^9, 3.4459382383125*^9}, 3.44593827290625*^9, {
+   3.445938311078125*^9, 3.445938344046875*^9}, {3.4459384370625*^9, 
+   3.4459384540625*^9}, 3.445938511703125*^9, 3.44593855859375*^9, {
+   3.445938611484375*^9, 3.4459386470625*^9}, 3.4459387011875*^9, 
+   3.44593875946875*^9, 3.4459388066875*^9, 3.445938874484375*^9, 
+   3.445938938796875*^9, 3.44593899928125*^9, 3.445939052046875*^9, 
+   3.44593910540625*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Ordering", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"#", "/", 
+      RowBox[{"EulerPhi", "[", "#", "]"}]}], "&"}], "@", 
+    RowBox[{"{", 
+     RowBox[{
+     "4880190", ",", "5019210", ",", "5491710", ",", "6029100", ",", 
+      "6303150", ",", "6644190", ",", "7581420", ",", "7614810", ",", 
+      "7819560", ",", "9126810", ",", "9415560", ",", "8121960"}], "}"}]}], 
+   ",", "1"}], "]"}]], "Input",
+ CellChangeTimes->{
+  3.445938827375*^9, {3.445938890265625*^9, 3.44593891278125*^9}, {
+   3.445938946953125*^9, 3.44593895175*^9}, {3.44593900478125*^9, 
+   3.445939006578125*^9}, 3.445939059703125*^9, {3.44593914121875*^9, 
+   3.4459391731875*^9}, {3.44594032984375*^9, 3.445940332578125*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", "6", "}"}]], "Output",
+ CellChangeTimes->{{3.445939142390625*^9, 3.445939173546875*^9}, 
+   3.44594033396875*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"problem", " ", "70"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Very", " ", "Slow"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"f", "[", "n_", "]"}], ":=", 
+     RowBox[{
+      RowBox[{"Sort", "@", 
+       RowBox[{"IntegerDigits", "[", 
+        RowBox[{"EulerPhi", "[", "n", "]"}], "]"}]}], "==", 
+      RowBox[{"Sort", "@", 
+       RowBox[{"IntegerDigits", "[", "n", "]"}]}]}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"L", "=", 
+     RowBox[{"Flatten", "[", 
+      RowBox[{
+       RowBox[{"Map", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"Select", "[", 
+           RowBox[{
+            RowBox[{"Range", "[", 
+             RowBox[{
+              RowBox[{"#", " ", 
+               RowBox[{"10", "^", "6"}]}], ",", 
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{"#", "+", "1"}], ")"}], 
+               RowBox[{"10", "^", "6"}]}]}], "]"}], ",", 
+            RowBox[{
+             RowBox[{"f", "[", "#", "]"}], "&"}]}], "]"}], "&"}], ",", 
+         RowBox[{"Range", "[", 
+          RowBox[{"5", ",", "9"}], "]"}]}], "]"}], ",", "1"}], "]"}]}], ";"}],
+    "\[IndentingNewLine]", 
+   RowBox[{"L", "[", 
+    RowBox[{"[", 
+     RowBox[{"Ordering", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"#", "/", 
+          RowBox[{"EulerPhi", "[", "#", "]"}]}], "&"}], "@", "L"}], ",", 
+       "1"}], "]"}], "]"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.4460915735625*^9, 3.44609159128125*^9}, 
+   3.509417314296875*^9}]
+},
+WindowSize->{615, 527},
+WindowMargins->{{29, Automatic}, {Automatic, 53}},
+FrontEndVersion->"8.0 for Microsoft Windows (32-bit) (November 7, 2010)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[545, 20, 414, 11, 31, "Input"],
+Cell[CellGroupData[{
+Cell[984, 35, 1233, 28, 31, "Input"],
+Cell[2220, 65, 621, 10, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2878, 80, 736, 17, 92, "Input"],
+Cell[3617, 99, 141, 3, 30, "Output"]
+}, Open  ]],
+Cell[3773, 105, 1624, 49, 132, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)

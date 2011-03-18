@@ -1,0 +1,59 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      1233,         49]
+NotebookOptionsPosition[       991,         36]
+NotebookOutlinePosition[      1336,         51]
+CellTagsIndexPosition[      1293,         48]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Problem", " ", "25"}], "*)"}], 
+  RowBox[{"NestWhile", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"#", "+", "1"}], "&"}], ",", "1", ",", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Length", "@", 
+       RowBox[{"IntegerDigits", "[", 
+        RowBox[{"Fibonacci", "[", "#", "]"}], "]"}]}], "<", "1000"}], "&"}]}],
+    "]"}]}]], "Input",
+ CellChangeTimes->{3.444608934734375*^9}]
+},
+WindowSize->{715, 559},
+WindowMargins->{{Automatic, 197}, {34, Automatic}},
+FrontEndVersion->"8.0 for Microsoft Windows (32-bit) (November 7, 2010)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 430, 14, 31, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

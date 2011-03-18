@@ -1,0 +1,90 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      2142,         80]
+NotebookOptionsPosition[      1829,         64]
+NotebookOutlinePosition[      2173,         79]
+CellTagsIndexPosition[      2130,         76]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Problem", " ", "55"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"Ar", "[", "n_", "]"}], ":=", 
+     RowBox[{
+      RowBox[{"FromDigits", "@", 
+       RowBox[{"Reverse", "@", 
+        RowBox[{"IntegerDigits", "[", "n", "]"}]}]}], "+", "n"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Npalindromic", "[", "n_", "]"}], ":=", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"Reverse", "@", "#"}], "=!=", "#"}], ")"}], "&"}], "@", 
+      RowBox[{"IntegerDigits", "[", "n", "]"}]}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Lychrel", "[", "n_", "]"}], ":=", 
+     RowBox[{"Npalindromic", "@", 
+      RowBox[{"NestWhile", "[", 
+       RowBox[{"Ar", ",", 
+        RowBox[{"Ar", "@", "n"}], ",", "Npalindromic", ",", "1", ",", "49"}], 
+       "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"Length", "@", 
+    RowBox[{"Select", "[", 
+     RowBox[{
+      RowBox[{"Range", "[", 
+       RowBox[{"10", "^", "4"}], "]"}], ",", "Lychrel"}], 
+     "]"}]}]}]}]], "Input"],
+
+Cell[BoxData["249"], "Output",
+ CellChangeTimes->{3.445224082703125*^9}]
+}, Open  ]]
+},
+WindowSize->{715, 559},
+WindowMargins->{{96, Automatic}, {Automatic, 60}},
+FrontEndVersion->"8.0 for Microsoft Windows (32-bit) (November 7, 2010)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 1159, 36, 112, "Input"],
+Cell[1741, 60, 72, 1, 30, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

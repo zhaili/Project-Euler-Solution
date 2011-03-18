@@ -1,0 +1,102 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      2947,         92]
+NotebookOptionsPosition[      2632,         76]
+NotebookOutlinePosition[      2977,         91]
+CellTagsIndexPosition[      2934,         88]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Problem", " ", "35"}], "*)"}], 
+  RowBox[{
+   RowBox[{
+    RowBox[{"NextNum", "=", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Quotient", "[", 
+        RowBox[{"#", ",", "10"}], "]"}], "+", 
+       RowBox[{
+        RowBox[{"Mod", "[", 
+         RowBox[{"#", ",", "10"}], "]"}], "*", 
+        RowBox[{"10", "^", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"IntegerLength", "[", "#", "]"}], "-", "1"}], ")"}]}]}]}], 
+      "&"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"CircularPrimeQ", "=", 
+     RowBox[{
+      RowBox[{"And", "@@", 
+       RowBox[{"PrimeQ", "@", 
+        RowBox[{"NestList", "[", 
+         RowBox[{"NextNum", ",", "#", ",", 
+          RowBox[{
+           RowBox[{"IntegerLength", "[", "#", "]"}], "-", "1"}]}], "]"}]}]}], 
+      "&"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"Select", "[", 
+    RowBox[{
+     RowBox[{"Prime", "[", 
+      RowBox[{"Range", "[", 
+       RowBox[{"PrimePi", "[", 
+        RowBox[{"10", "^", "6"}], "]"}], "]"}], "]"}], ",", 
+     "CircularPrimeQ"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.444644783625*^9, 3.444644881234375*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "2", ",", "3", ",", "5", ",", "7", ",", "11", ",", "13", ",", "17", ",", 
+   "31", ",", "37", ",", "71", ",", "73", ",", "79", ",", "97", ",", "113", 
+   ",", "131", ",", "197", ",", "199", ",", "311", ",", "337", ",", "373", 
+   ",", "719", ",", "733", ",", "919", ",", "971", ",", "991", ",", "1193", 
+   ",", "1931", ",", "3119", ",", "3779", ",", "7793", ",", "7937", ",", 
+   "9311", ",", "9377", ",", "11939", ",", "19391", ",", "19937", ",", 
+   "37199", ",", "39119", ",", "71993", ",", "91193", ",", "93719", ",", 
+   "93911", ",", "99371", ",", "193939", ",", "199933", ",", "319993", ",", 
+   "331999", ",", "391939", ",", "393919", ",", "919393", ",", "933199", ",", 
+   "939193", ",", "939391", ",", "993319", ",", "999331"}], "}"}]], "Output",
+ CellChangeTimes->{{3.444644862828125*^9, 3.444644888*^9}}]
+}, Open  ]]
+},
+WindowSize->{715, 559},
+WindowMargins->{{Automatic, 269}, {Automatic, 30}},
+FrontEndVersion->"8.0 for Microsoft Windows (32-bit) (November 7, 2010)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 1175, 36, 72, "Input"],
+Cell[1757, 60, 859, 13, 88, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

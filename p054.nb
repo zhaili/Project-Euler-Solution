@@ -1,0 +1,187 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      5566,        177]
+NotebookOptionsPosition[      5322,        164]
+NotebookOutlinePosition[      5666,        179]
+CellTagsIndexPosition[      5623,        176]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Problem", " ", "54", " ", "From", " ", 
+    RowBox[{"Mr", ".", "Wizard"}]}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"dat", "=", 
+     RowBox[{"Import", "[", 
+      RowBox[{"\"\<poker.txt\>\"", ",", "\"\<Table\>\""}], "]"}]}], ";"}], 
+   "\n", 
+   RowBox[{
+    RowBox[{"rls1", "=", 
+     RowBox[{"Thread", "[", 
+      RowBox[{
+       RowBox[{"Characters", "@", "\"\<23456789TJQKA\>\""}], "\[Rule]", 
+       RowBox[{"Range", "[", 
+        RowBox[{"2", ",", "14"}], "]"}]}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"dat", "=", 
+     RowBox[{
+      RowBox[{"Characters", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"#", "~", "Partition", "~", "5"}], "&"}], "/@", "dat"}], 
+       "]"}], "/.", "rls1"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"SetAttributes", "[", 
+     RowBox[{"h", ",", "Orderless"}], "]"}], ";", 
+    RowBox[{"dat", "=", 
+     RowBox[{"Apply", "[", 
+      RowBox[{"h", ",", "dat", ",", 
+       RowBox[{"{", "2", "}"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"f1", "=", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Union", "@", 
+        RowBox[{"Differences", "[", 
+         RowBox[{"List", "@@", 
+          RowBox[{"#1", "[", 
+           RowBox[{"[", 
+            RowBox[{"All", ",", "1"}], "]"}], "]"}]}], "]"}]}], "\[Equal]", 
+       RowBox[{"{", "1", "}"}]}], "&"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"f2", "=", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"#2", ",", 
+        RowBox[{"Max", "@@", 
+         RowBox[{"#", "[", 
+          RowBox[{"[", 
+           RowBox[{"All", ",", "1"}], "]"}], "]"}]}]}], "}"}], "&"}]}], ";"}],
+    "\n", 
+   RowBox[{
+    RowBox[{"rls2", "=", 
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"w", ":", 
+         RowBox[{
+          RowBox[{"h", "[", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"_", ",", "t_"}], "}"}], ".."}], "]"}], "?", "f1"}]}], 
+        "\[RuleDelayed]", 
+        RowBox[{"f2", "[", 
+         RowBox[{"w", ",", "9"}], "]"}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"h", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"a_", ",", "_"}], "}"}], ".."}], ",", "_"}], "]"}], 
+        "\[RuleDelayed]", 
+        RowBox[{"{", 
+         RowBox[{"8", ",", "a"}], "}"}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"w", ":", 
+         RowBox[{"h", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"a_", "|", "b_"}], ",", "_"}], "}"}], ".."}], "]"}]}], 
+        "\[RuleDelayed]", 
+        RowBox[{"f2", "[", 
+         RowBox[{"w", ",", "7"}], "]"}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"w", ":", 
+         RowBox[{"h", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"_", ",", "t_"}], "}"}], ".."}], "]"}]}], 
+        "\[RuleDelayed]", 
+        RowBox[{"f2", "[", 
+         RowBox[{"w", ",", "6"}], "]"}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"w_h", "?", "f1"}], "\[RuleDelayed]", 
+        RowBox[{"f2", "[", 
+         RowBox[{"w", ",", "5"}], "]"}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"h", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"a_", ",", "_"}], "}"}], ".."}], ",", "_", ",", "_"}], 
+         "]"}], "\[RuleDelayed]", 
+        RowBox[{"{", 
+         RowBox[{"4", ",", "a"}], "}"}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"h", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"a_", "|", "b_"}], ",", "_"}], "}"}], ".."}], ",", "_"}],
+          "]"}], "\[RuleDelayed]", 
+        RowBox[{"{", 
+         RowBox[{"3", ",", 
+          RowBox[{"a", "~", "Max", "~", "b"}]}], "}"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"h", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"a_", ",", "_"}], "}"}], ".."}], ",", "_", ",", "_", ",", 
+          "_"}], "]"}], "\[RuleDelayed]", 
+        RowBox[{"{", 
+         RowBox[{"2", ",", "a"}], "}"}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{"w_h", "\[RuleDelayed]", 
+        RowBox[{"f2", "[", 
+         RowBox[{"w", ",", "1"}], "]"}]}]}], "\[IndentingNewLine]", "}"}]}], 
+    ";"}], "\[IndentingNewLine]", 
+   RowBox[{"Count", "[", 
+    RowBox[{
+     RowBox[{"OrderedQ", "/@", 
+      RowBox[{"(", 
+       RowBox[{"dat", "/.", "rls2"}], ")"}]}], ",", "False"}], 
+    "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.445140064640625*^9, 3.445140089578125*^9}, {
+  3.4451401258125*^9, 3.445140143734375*^9}}]
+},
+WindowSize->{715, 559},
+WindowMargins->{{72, Automatic}, {Automatic, 30}},
+FrontEndVersion->"8.0 for Microsoft Windows (32-bit) (November 7, 2010)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 4761, 142, 392, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

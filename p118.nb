@@ -1,0 +1,160 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[      5008,        151]
+NotebookOptionsPosition[      4620,        133]
+NotebookOutlinePosition[      4986,        149]
+CellTagsIndexPosition[      4943,        146]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}], ";"}], "\n", 
+ RowBox[{"Timing", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Used", "[", "x_", "]"}], ":=", "False"}], ";", 
+   "\[IndentingNewLine]", 
+   RowBox[{"count", "=", "0"}], ";", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"P", "[", 
+     RowBox[{"i_", ",", "last_"}], "]"}], ":=", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"k", ",", "r"}], "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"For", "[", 
+       RowBox[{
+        RowBox[{"k", "=", "1"}], ",", 
+        RowBox[{"k", "\[LessEqual]", "9"}], ",", 
+        RowBox[{"++", "k"}], ",", "\[IndentingNewLine]", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"!", 
+           RowBox[{"Used", "[", "k", "]"}]}], ",", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Used", "[", "k", "]"}], "=", "True"}], ";", 
+           "\[IndentingNewLine]", 
+           RowBox[{"r", "=", 
+            RowBox[{
+             RowBox[{"i", "*", "10"}], "+", "k"}]}], ";", 
+           "\[IndentingNewLine]", 
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"r", ">", "last"}], "&&", 
+              RowBox[{"PrimeQ", "[", "r", "]"}]}], ",", 
+             RowBox[{"Search", "[", "r", "]"}]}], "]"}], ";", 
+           "\[IndentingNewLine]", 
+           RowBox[{"P", "[", 
+            RowBox[{"r", ",", "last"}], "]"}], ";", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"Used", "[", "k", "]"}], "=", "False"}], ";"}]}], 
+         "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", "]"}]}], 
+     "\[IndentingNewLine]", "]"}]}], ";", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Search", "[", "last_", "]"}], ":=", "\[IndentingNewLine]", 
+    RowBox[{"(*", " ", 
+     RowBox[{"If", " ", "We", " ", "Found", " ", "the", " ", "solution"}], 
+     "*)"}], "\[IndentingNewLine]", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{"And", "@@", 
+       RowBox[{"(", 
+        RowBox[{"Used", "/@", 
+         RowBox[{"Range", "[", "9", "]"}]}], ")"}]}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"count", "++"}], ";"}], 
+      RowBox[{"(*", 
+       RowBox[{
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Mod", "[", 
+            RowBox[{"count", ",", "1000"}], "]"}], "\[Equal]", "0"}], ",", 
+          RowBox[{"Print", "[", "count", "]"}]}], "]"}], ";"}], "*)"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"P", "[", 
+       RowBox[{"0", ",", "last"}], "]"}]}], "]"}]}], ";", 
+   "\[IndentingNewLine]", 
+   RowBox[{"Search", "[", "0", "]"}], ";", "\[IndentingNewLine]", "count"}], 
+  "\[IndentingNewLine]", "]"}]}], "Input",
+ CellChangeTimes->CompressedData["
+1:eJwt0E0ow3Ecx/FfzG21SRGSaGpjB4dxmzUt5aBGS5NSVmvzEIcVDuSvtDwc
+SG6aw3BgSnO0rXk4cOBgk+VsTRPloVZKjf3e/8O/V+/Pt9/l3+SZHvCWCSHa
+/r+SzmLt9u5X3u5cdO1Iiy+HGIiXFEpk9KykuEPlYIxOzWNWYf9UDQXZa1bp
+xg1Mb+JKiPvbPm07pi1R/Llgd1zhQ4p9KI33GXRmuZtfsVjARHlMamyQCr0B
+q1rQbubuVp3rxNZu7j433qp6R7mHPfS6D6v97Pkp+ltVE0DjDPfJLH1ewC0R
+l/uaRipidThoYs+040cH+68Nx3tQ98g990SfP9PNOfr0DW/ecbnAfUEkZJ9U
+SBWrFhU9HlVy/67DiIH90kJfo7JnpYe7MOrA/j7sdeGpB01+1E7wviNAh2fp
+pILBJXZdFEdQqS9L8p+kf5l/Xsw=
+  "]],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"257.172`", ",", "44680"}], "}"}]], "Output",
+ CellChangeTimes->{3.482709663890625*^9, 3.482712347296875*^9}]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{"<<", "DiscreteMath`Combinatorica`"}], "\n", 
+ RowBox[{
+  RowBox[{"Total", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Times", "@@", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"Count", "[", 
+          RowBox[{
+           RowBox[{"FromDigits", "/@", 
+            RowBox[{"Permutations", "[", "#", "]"}]}], ",", 
+           RowBox[{"x_", "/;", 
+            RowBox[{"PrimeQ", "[", "x", "]"}]}]}], "]"}], "&"}], ")"}], "/@", 
+       "#"}]}], "&"}], "/@", 
+    RowBox[{"SetPartitions", "[", "9", "]"}]}], "]"}], "//", 
+  "Timing"}]}], "Input"]
+},
+WindowSize->{615, 559},
+WindowMargins->{{Automatic, 96}, {Automatic, 15}},
+ShowSelection->True,
+FrontEndVersion->"7.0 for Microsoft Windows (32-bit) (February 18, 2009)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 3292, 83, 472, "Input"],
+Cell[3862, 107, 148, 3, 30, "Output"]
+}, Open  ]],
+Cell[4025, 113, 591, 18, 92, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)

@@ -1,0 +1,92 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      2225,         82]
+NotebookOptionsPosition[      1911,         66]
+NotebookOutlinePosition[      2256,         81]
+CellTagsIndexPosition[      2213,         78]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Problem", " ", "87"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"n", "=", 
+     RowBox[{"50", " ", 
+      RowBox[{"10", "^", "6"}]}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"FourthPrimeL", "=", 
+     RowBox[{
+      RowBox[{"Prime", "[", 
+       RowBox[{"Range", "[", "23", "]"}], "]"}], "^", "4"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"CubePrimeL", "=", 
+     RowBox[{
+      RowBox[{"Prime", "[", 
+       RowBox[{"Range", "[", "73", "]"}], "]"}], "^", "3"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"SquarePrimeL", "=", 
+     RowBox[{
+      RowBox[{"Prime", "[", 
+       RowBox[{"Range", "[", "908", "]"}], "]"}], "^", "2"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"Length", "@", 
+    RowBox[{"Select", "[", 
+     RowBox[{
+      RowBox[{"Union", "@", 
+       RowBox[{"Flatten", "@", 
+        RowBox[{"Outer", "[", 
+         RowBox[{
+         "Plus", ",", "SquarePrimeL", ",", "CubePrimeL", ",", 
+          "FourthPrimeL"}], "]"}]}]}], ",", 
+      RowBox[{
+       RowBox[{"#", "<", "n"}], "&"}]}], "]"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.447146758625185*^9, 3.447146761375185*^9}}],
+
+Cell[BoxData["1097343"], "Output",
+ CellChangeTimes->{3.447146787000185*^9}]
+}, Open  ]]
+},
+WindowSize->{715, 559},
+WindowMargins->{{192, Automatic}, {Automatic, 60}},
+FrontEndVersion->"8.0 for Microsoft Windows (32-bit) (November 7, 2010)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 1237, 38, 152, "Input"],
+Cell[1819, 62, 76, 1, 30, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

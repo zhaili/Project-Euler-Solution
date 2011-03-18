@@ -1,0 +1,149 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[      4624,        140]
+NotebookOptionsPosition[      4238,        122]
+NotebookOutlinePosition[      4605,        138]
+CellTagsIndexPosition[      4562,        135]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[Cell[BoxData[
+ FormBox[GridBox[{
+    {GridBox[{
+       {
+        StyleBox[
+         RowBox[{GridBox[{
+            {GridBox[{
+               {
+                StyleBox[
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{"h", "[", 
+                    RowBox[{"a", ",", "k"}], "]"}], " ", "mod", " ", "n"}], 
+                  " ", "\[Congruent]", " ", 
+                  RowBox[{
+                   RowBox[{"a", "^", 
+                    RowBox[{"h", "[", 
+                    RowBox[{"a", ",", 
+                    RowBox[{"k", "-", "1"}]}], "]"}]}], "  ", "mod", " ", 
+                   "n"}], " ", "\[Congruent]", " ", 
+                  RowBox[{
+                   RowBox[{"a", "^", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"h", "[", 
+                    RowBox[{"a", ",", 
+                    RowBox[{"k", "-", "1"}]}], "]"}], " ", "mod", " ", 
+                    "\[Phi]", 
+                    RowBox[{"(", "n", ")"}]}], ")"}]}], " ", "mod", " ", 
+                   "n"}]}],
+                 FontSize->14]}
+              },
+              GridBoxAlignment->{"Columns" -> {{"="}}}]}
+           },
+           GridBoxAlignment->{"Columns" -> {{"Center"}}}], 
+          "\[IndentingNewLine]", 
+          RowBox[{"\[Congruent]", " ", 
+           RowBox[{
+            RowBox[{"a", "^", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"a", "^", 
+                RowBox[{"h", "[", 
+                 RowBox[{"a", ",", 
+                  RowBox[{"k", "-", "2"}]}], "]"}]}], " ", "mod", " ", 
+               RowBox[{"\[Phi]", "(", "n", ")"}]}], ")"}]}], " ", "mod", " ", 
+            "n"}], " ", "\[Congruent]", " ", 
+           RowBox[{
+            RowBox[{"a", "^", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"a", "^", 
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{"h", "[", 
+                   RowBox[{"a", ",", 
+                    RowBox[{"k", "-", "2"}]}], "]"}], "  ", "mod", " ", 
+                  RowBox[{"\[Phi]", "(", "n", ")"}]}], ")"}]}], " ", "mod", 
+               " ", 
+               RowBox[{"\[Phi]", "(", "n", ")"}]}], ")"}]}], " ", "mod", " ", 
+            "n"}]}]}],
+         FontSize->14]}
+      },
+      GridBoxAlignment->{"Columns" -> {{"="}}}]}
+   },
+   GridBoxItemSize->{"Columns" -> {{
+        Scaled[0.96]}}}], TraditionalForm]]]], "Text",
+ CellChangeTimes->{{3.466984222109375*^9, 3.46698426878125*^9}, {
+  3.466984339421875*^9, 3.466984387203125*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"h", "[", 
+    RowBox[{"a_", ",", "k_", ",", "m_"}], "]"}], ":=", 
+   RowBox[{"Nest", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"PowerMod", "[", 
+       RowBox[{"a", ",", "#", ",", "m"}], "]"}], "&"}], ",", "1", ",", "k"}], 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"PowerMod", "[", 
+  RowBox[{"1777", ",", 
+   RowBox[{"h", "[", 
+    RowBox[{"1777", ",", "1854", ",", 
+     RowBox[{"EulerPhi", "[", 
+      RowBox[{"10", "^", "8"}], "]"}]}], "]"}], ",", 
+   RowBox[{"10", "^", "8"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.466984722390625*^9, 3.46698474934375*^9}, {
+  3.4669848276875*^9, 3.46698487453125*^9}, {3.466984916515625*^9, 
+  3.466984921953125*^9}, {3.466987967875*^9, 3.466987989671875*^9}, {
+  3.466988052984375*^9, 3.4669880644375*^9}, {3.46698815521875*^9, 
+  3.466988175296875*^9}}],
+
+Cell[BoxData["95962097"], "Output",
+ CellChangeTimes->{{3.466987990578125*^9, 3.466988007734375*^9}, {
+   3.46698805475*^9, 3.466988065046875*^9}, {3.466988164671875*^9, 
+   3.466988175640625*^9}, 3.466988230890625*^9}]
+}, Open  ]]
+},
+WindowSize->{615, 559},
+WindowMargins->{{Automatic, 288}, {Automatic, 42}},
+ShowSelection->True,
+FrontEndVersion->"7.0 for Microsoft Windows (32-bit) (February 18, 2009)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[545, 20, 2566, 68, 53, "Text"],
+Cell[CellGroupData[{
+Cell[3136, 92, 864, 22, 52, "Input"],
+Cell[4003, 116, 219, 3, 30, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

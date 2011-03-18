@@ -1,0 +1,164 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      4514,        154]
+NotebookOptionsPosition[      4053,        133]
+NotebookOutlinePosition[      4396,        148]
+CellTagsIndexPosition[      4353,        145]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Problem", " ", "51"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"f", "[", 
+      RowBox[{"l_", ",", "p_", ",", "c_"}], "]"}], ":=", 
+     RowBox[{"l", "/.", 
+      RowBox[{"{", 
+       RowBox[{"p", "\[Rule]", "c"}], "}"}]}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"g", "[", 
+      RowBox[{"l_", ",", "p_"}], "]"}], ":=", 
+     RowBox[{"Length", "@", 
+      RowBox[{"Select", "[", 
+       RowBox[{
+        RowBox[{"Map", "[", 
+         RowBox[{"FromDigits", ",", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"f", "[", 
+             RowBox[{"l", ",", "p", ",", "#"}], "]"}], "&"}], "/@", 
+           RowBox[{"Range", "[", 
+            RowBox[{"0", ",", "9"}], "]"}]}]}], "]"}], ",", "PrimeQ"}], 
+       "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"H", "[", "n_", "]"}], ":=", 
+     RowBox[{"Max", "@", 
+      RowBox[{"Map", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"g", "[", 
+          RowBox[{
+           RowBox[{"IntegerDigits", "@", "n"}], ",", "#"}], "]"}], "&"}], ",", 
+        RowBox[{"IntegerDigits", "@", "n"}]}], "]"}]}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"NestList", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"NestWhile", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"#", "+", "1"}], "&"}], ",", 
+        RowBox[{"#", "+", "1"}], ",", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"H", "[", 
+           RowBox[{"Prime", "@", "#"}], "]"}], "<", "8"}], "&"}]}], "]"}], 
+      "&"}], ",", "1", ",", "5"}], "]"}], "\[IndentingNewLine]", 
+   RowBox[{"Prime", "@", 
+    RowBox[{"Rest", "@", "%"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.445076919884014*^9, 3.445076940149639*^9}, {
+  3.445133302625*^9, 3.445133302734375*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "1", ",", "10608", ",", "11415", ",", "13147", ",", "19787", ",", "19844"}],
+   "}"}]], "Output",
+ CellChangeTimes->{3.445076957071514*^9, 3.445133226796875*^9, 
+  3.445133329265625*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "111857", ",", "121313", ",", "141619", ",", "222109", ",", "222857"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.445076957071514*^9, 3.445133226796875*^9, 
+  3.445133329265625*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"h", "[", 
+    RowBox[{"l_", ",", "p_"}], "]"}], ":=", 
+   RowBox[{"Select", "[", 
+    RowBox[{
+     RowBox[{"Map", "[", 
+      RowBox[{"FromDigits", ",", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"f", "[", 
+          RowBox[{"l", ",", "p", ",", "#"}], "]"}], "&"}], "/@", 
+        RowBox[{"Range", "[", 
+         RowBox[{"0", ",", "9"}], "]"}]}]}], "]"}], ",", "PrimeQ"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"h", "[", 
+  RowBox[{
+   RowBox[{"IntegerDigits", "@", "121313"}], ",", "1"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.445077057321514*^9, 3.445077059977764*^9}, {
+  3.445133233109375*^9, 3.445133295625*^9}, {3.4451333408125*^9, 
+  3.445133371921875*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "121313", ",", "222323", ",", "323333", ",", "424343", ",", "525353", ",", 
+   "626363", ",", "828383", ",", "929393"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.445076959727764*^9, {3.445077057962139*^9, 3.445077060618389*^9}, {
+   3.445133248984375*^9, 3.445133296546875*^9}, {3.445133342046875*^9, 
+   3.445133372375*^9}}]
+}, Open  ]]
+},
+WindowSize->{715, 559},
+WindowMargins->{{0, Automatic}, {34, Automatic}},
+FrontEndVersion->"8.0 for Microsoft Windows (32-bit) (November 7, 2010)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 1856, 56, 132, "Input"],
+Cell[2438, 80, 228, 6, 30, "Output"],
+Cell[2669, 88, 223, 6, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2929, 99, 737, 21, 52, "Input"],
+Cell[3669, 122, 368, 8, 30, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
