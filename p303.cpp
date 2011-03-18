@@ -1,103 +1,71 @@
-// #include <stdio.h>
-#include <iostream>
+/*
+  f(2)=2, f(3)=12, f(7)=21, f(42)=210, f(89)=1121222.
+*/
+
+#include <stdio.h>
 
 #include <deque>
-#include <list>
 
-#include <gmpxx.h>
+typedef unsigned __int64 uint64;
 
-// typedef unsigned __int64 uint64;
+#define DIGITS_LIMIT 23
 
-#define NUMBER_LIMIT 1000
+int digits[100] = {0};
 
-mpz_class table[NUMBER_LIMIT+1] = {0};
-
-std::deque<mpz_class> queue;
-
-std::list<int> rest;
-
-void init()
+void next_num(int *digits)
 {
-    for (int i=1; i<=NUMBER_LIMIT; ++i)
-        rest.push_back(i);
-}
-
-bool check(mpz_class c)
-{
-    std::list<int>::iterator it;
-
-    for (it=rest.begin(); it!=rest.end(); ) {
-        int elem = *it;
-        if (c % elem==0) {
-            table[elem] = c;
-
-            it = rest.erase(it);
-        }
-        else {
-            ++it;
-        }
+    int carry = 1;
+    for (int i=0; i<=DIGITS_LIMIT; ++i) {
+        int e = digits[i] + carry;
+        
+        digits[i] = e % 3;
+        carry = e / 3;
     }
-
-    return rest.empty();
 }
 
-// bool check(mpz_class c)
-// {
-//     bool flag = false;
-//     for (int i=1; i<=limit; ++i) {
-//         if (table[i]==0) {
-//             flag = true;
-//             if (c%i==0) table[i] = c;
-//         }
-//     }
-
-//     return flag;
-// }
-
-void f()
+void print_num(int *digits)
 {
-    init();
-    queue.push_back(1);
-    queue.push_back(2);
+    for (int i=0; i<=DIGITS_LIMIT; ++i) {
+        printf("%d", digits[i]);
+    }
+    printf("\n");
+}
 
-    unsigned __int64 count=0;
-    
+uint64 f(int n)
+{
+    for (int i=0; i<=DIGITS_LIMIT; ++i)
+        digits[i] = 0;
+    digits[0] = 1;
+
+    uint64 count = 1;
+
     for (;;) {
+        //print_num(digits);
 
-        if (queue.empty()) break;
-
-        mpz_class c = queue.front();
-        queue.pop_front();
-
-        if (check(c)) break;
-
-        if (count <= 28697814)
-        {
-            c = c*10;
-            queue.push_back(c);
-            queue.push_back(c+1);
-            queue.push_back(c+2);
+        int c=0;
+        for (int i=DIGITS_LIMIT-1; i>=0; --i) {
+            c = (c*10+digits[i])%n;
         }
+        if (c==0) break;
+
+        next_num(digits);
         count++;
     }
+    
+    return count;
 }
 
 int main()
 {
-    f();
+    uint64 s = f(9999);
+    printf("%I64u\n", s);
 
-    std::cout << "----------------------------------------------------------------\n";
+    // uint64 sum(0);
+    // for (int i=1; i<=NUMBER_LIMIT; ++i) {
+    //     sum += table[i]/i;
 
-    mpz_class sum(0);
-    for (int i=1; i<=NUMBER_LIMIT; ++i) {
-        sum += table[i]/i;
-
-        std::cout << table[i] << "\n";
-    }
-
-    std::cout << "----------------------------------------------------------------\n";
-
-    std::cout << sum << "\n";
+    //     std::cout << table[i] << "\n";
+    // }
 
     return 0;
 }
