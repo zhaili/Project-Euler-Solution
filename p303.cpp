@@ -12,23 +12,9 @@ typedef unsigned __int64 uint64;
 
 int digits[100] = {0};
 
-void next_num(int *digits)
+uint64 f(int n)
 {
-    int carry = 1;
-    for (int i=0; i<=DIGITS_LIMIT; ++i) {
-        int e = digits[i] + carry;
-        
-        digits[i] = e % 3;
-        carry = e / 3;
-    }
-}
-
-void print_num(int *digits)
-{
-    for (int i=0; i<=DIGITS_LIMIT; ++i) {
-        printf("%d", digits[i]);
-    }
-    printf("\n");
+    
 }
 
 uint64 f(int n)
@@ -40,7 +26,6 @@ uint64 f(int n)
     uint64 count = 1;
 
     for (;;) {
-        //print_num(digits);
 
         int c=0;
         for (int i=DIGITS_LIMIT-1; i>=0; --i) {
@@ -59,13 +44,6 @@ int main()
 {
     uint64 s = f(9999);
     printf("%I64u\n", s);
-
-    // uint64 sum(0);
-    // for (int i=1; i<=NUMBER_LIMIT; ++i) {
-    //     sum += table[i]/i;
-
-    //     std::cout << table[i] << "\n";
-    // }
 
     return 0;
 }
