@@ -1,72 +1,42 @@
 #include <stdio.h>
 #include <cmath>
-
-#include <list>
+#include <algorithm>
 
 using namespace std;
 
 typedef __int64 int64;
 
-void f(int64 a1, int64 a2, int64 b1, int64 b2, int64* c1, int64* c2)
-{
-    int64 u = a1*b1 + a2*b2;
-    int64 v = abs(a1*b2 - a2*b1);
-
-    *c1 = min(u,v);
-    *c2 = max(u,v);
-}
-
-
-void g(int64 a1, int64 a2, int64 b1, int64 b2, int64* c1, int64* c2)
-{
-    int64 u = a1*b2 + a2*b1;
-    int64 v = abs(a1*b1 - a2*b2);
-
-    *c1 = min(u,v);
-    *c2 = max(u,v);
-}
-
-typedef pair<int64,int64> pair64;
-
 #define lengthof(_array) (sizeof(_array)/sizeof(_array[0]))
-
-void traval(list<pair64> &l, int64 a1, int64 a2)
-{
-    list<pair64> nl;
-
-    nl.push_back(pair64(a1,a2));
-
-    list<pair64>::iterator it;
-    for (it=l.begin();it!=l.end();++it) {
-        const pair64& e = *it;
-        int64 u,v;
-
-        f(e.first, e.second, a1, a2, &u,&v);
-        nl.push_back(pair64(u,v));
-
-        g(e.first, e.second, a1, a2, &u,&v);
-        nl.push_back(pair64(u,v));
-    }
-
-    l.splice(l.end(), nl);
-}
 
 int64 solutions[][2] = {{1, 2}, {2, 3}, {1, 4}, {2, 5}, {1, 6}, {4, 5}, {2, 7}, {5, 6}, {3, 8}, {5, 8}, {4, 9}, {1, 10}, {3, 10}, {7, 8}, {4, 11}, {7, 10}};
 
+int64 sum = 0;
+
+void traval(int pos, int64 u, int64 v)
+{
+    if (pos==16) {
+        sum += min(abs(u),abs(v));
+        //printf("u=%I64d,v=%I64d\n", u, v);
+        return;
+    }
+    traval(pos+1, u, v);
+
+    int64 a = solutions[pos][0];
+    int64 b = solutions[pos][1];
+
+    int64 x = a*u - b*v;
+    int64 y = a*v + b*u;
+    traval(pos+1, x, y);
+
+    x = a*u + b*v;
+    y = b*u - a*v;
+    traval(pos+1, x, y);
+}
+
 int main()
 {
-    list<pair64> l;
-    for (int i=0; i<lengthof(solutions); ++i) {
-        traval(l, solutions[i][0], solutions[i][1]);
-    }
-
-    unsigned __int64 sum = 0;
-
-    list<pair64>::iterator it;
-    for (it=l.begin();it!=l.end();++it) {
-        //printf("{%I64d,%I64d},", it->first, it->second);
-        sum += it->first;
-    }
+    for (int i=0; i<16; ++i)
+        traval(i+1, solutions[i][0], solutions[i][1]);
 
     printf("sum=%I64d\n", sum);
 
