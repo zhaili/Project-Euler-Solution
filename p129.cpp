@@ -115,7 +115,8 @@ int main()
     // printf("a=%d\n", a(1000023));
     // printf("a=%d\n", a(333341));
 
-    int n = 3;
+    //int n = 3;
+    int n = 999999;             // a(n) < n
     while (1) {
         n += 2;
         if (n%5==0) continue;
