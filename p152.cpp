@@ -1,60 +1,117 @@
-#include <stdio.h>
-#include <stdlib.h>
+/*
+  g++ -o p152 -O2 p152.cpp -Ie:/ntl/include e:/ntl/src/ntl.a
+ */
 
-#include <list>
+#include <ctime>
 
-//#define b 35
+#include <vector>
+#include <set>
+#include <algorithm>
+#include <iostream>
 
-/* (s, i) */
-typedef std::pair<int, int> elem;
-typedef std::list<elem> tbl;
+#include <NTL/ZZ.h>
+NTL_CLIENT
 
-int v[] = {1587600, 705600, 396900, 254016, 176400, 129600, 99225, 78400, 63504};
+using namespace std;
 
-void print(const tbl& l)
+void sum(const ZZ& a, const ZZ& b, int k, ZZ& na, ZZ& nb)
 {
-    for (tbl::const_iterator it=l.begin(); it!=l.end(); ++it) {
-        printf("(%d,%d)-", it->first, it->second);
-    }
-    printf("\n");
+    ZZ n = b+a*k*k;
+    ZZ d = b*k*k;
+
+    ZZ g = GCD(n,d);
+
+    n /= g;
+    d /= g;
+
+    na = n;
+    nb = d;
 }
 
-void trans(tbl& a, int j)
+#define NUM 80
+#define LIM 11
+int prime[] = {37, 31, 29, 23, 19, 17, 13, 11, 7, 5, 3};
+int p2[6] = {2, 4, 8, 16, 32, 64};
+
+vector<int> sqlist;
+vector<vector<int> > sumsqlist;
+
+vector<pair<ZZ,ZZ> > sumsq;
+std::set<pair<ZZ, ZZ> > sumsq2;
+
+void dfs(int last, int d, const ZZ& a, const ZZ& b)
 {
-    tbl c;
-    for (tbl::iterator it=a.begin(); it!=a.end(); ++it) {
-        c.push_back(elem(it->first+j, it->second));
+	if (last>=LIM) {
+        sumsq.push_back(pair<ZZ,ZZ>(a,b));
+
+		vector<int> l(sqlist);
+		sort(l.begin(), l.end());
+        sumsqlist.push_back(l);
+		return;
+	}
+	if (prime[last]*d > NUM) {
+		return;
+	}
+
+    dfs(last, d+1, a, b);
+
+    bool added = false;
+    for (int i=0; i<last; ++i) {
+        if (d%prime[i]==0) { added=true; return; }
     }
+    if (!added) {           // d not added before
+        ZZ na, nb;
+        sum(a, b, d*prime[last], na, nb);
 
-    //print(c);
+        sqlist.push_back(d*prime[last]);
+        dfs(last, d+1, na, nb);
 
-    tbl::iterator ita = a.begin();
-    tbl::iterator itc = c.begin();
-
-    for (; ita!=a.end(); ++ita) {
-        for (; itc!=c.end(); ++itc) {
-            if (itc->first < ita->first) {
-                a.insert(ita, *itc);
-            }
-            else if (itc->first == ita->first) {
-                ita->second += itc->second;
-            }
-            else {
-                break;
-            }
+        for (int i=last; i<LIM; ++i) {
+            if (nb%prime[i]==0) break; 
+            dfs(i+1, 1, na, nb);
         }
+        sqlist.pop_back();
     }
-    if (itc!=c.end())
-        a.insert(ita, itc, c.end());
+}
+
+void dfs2(int d, const ZZ& a, const ZZ& b)
+{
+    if (d==6) {
+        sumsq2.insert(pair<ZZ,ZZ>(-a,b));
+        return;
+    }
+
+    ZZ na, nb;
+    sum(a,b, p2[d], na, nb);
+
+    dfs2(d+1, na, nb);
+    dfs2(d+1, a, b);
 }
 
 int main()
 {
-    tbl a;
-    a.push_back(elem(0,1));
+    int start = clock();
 
-    for (int j=0; j<9; ++j)
-        trans(a, v[j]);
+    dfs2(0, to_ZZ(-1), to_ZZ(2));
 
-    print(a);
+	for (int i=0; i<LIM; ++i)
+        dfs(i, 1, to_ZZ(0), to_ZZ(1));
+
+    int cnt=0,i=0;
+    for (vector<pair<ZZ,ZZ> >::iterator it=sumsq.begin();it!=sumsq.end();++it) {
+        if (sumsq2.count(*it)) {
+            // for (vector<int>::iterator its=sumsqlist[i].begin();its!=sumsqlist[i].end();++its) {
+            //     cout << *its << "," ;
+            // }
+            // cout << endl;
+
+            ++cnt;
+        }
+        ++i;
+    }
+    cout << "cnt=" << cnt << endl;
+
+    int finish = clock();
+    cout << "time:" << 1000*((float)finish-start)/CLOCKS_PER_SEC << "ms\n";
+    return 0;
 }
