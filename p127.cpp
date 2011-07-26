@@ -102,16 +102,16 @@ int main()
     ll s = 0;
 
     for (int c=2; c<N; ++c) {
-        for (int a=1; a<=c/2; ++a) {
-            if (gcd(a,c)!=1) continue;
-            int b = c-a;
+        if (rad[c]==c) continue;
 
+        int cr = c/rad[c];
+        for (int a=1; a<=c/2; ++a) {
             ll r = rad[a];
-            r *= rad[b];
-            if (r < c/rad[c]) {
-                s += c;
-            }
+            r *= rad[c-a];
+            if (r<cr && gcd(rad[a],rad[c-a])==1) s += c;
         }
+
+        //printf("c=%d\n", c);
     }
 
     printf("%I64d\n", s);
